@@ -1,4 +1,4 @@
-# Speech Steps
+# Tadpole Talk
 
 A private, parent-led home-practice companion for families of children with **Childhood
 Apraxia of Speech (CAS)** — built to be used alongside therapy directed by a qualified
@@ -20,7 +20,7 @@ iOS / iPadOS 17+ · SwiftUI · MVVM · SwiftData (local-only) · XcodeGen.
 - **Reminders** — gentle, spread-out nudges for little-and-often practice.
 - **Privacy** — everything stays on the device. No account, no tracking, nothing uploaded.
 
-> Speech Steps does not diagnose, assess, or replace professional care. It ships only its own
+> Tadpole Talk does not diagnose, assess, or replace professional care. It ships only its own
 > original explanatory content and is not affiliated with Cued Articulation or Key Word Sign.
 
 ## Architecture
@@ -37,12 +37,12 @@ iOS / iPadOS 17+ · SwiftUI · MVVM · SwiftData (local-only) · XcodeGen.
 ```sh
 brew install xcodegen swiftlint   # if needed
 xcodegen generate
-open SpeechSteps.xcodeproj        # or:
-xcodebuild test -project SpeechSteps.xcodeproj -scheme SpeechSteps \
+open TadpoleTalk.xcodeproj        # or:
+xcodebuild test -project TadpoleTalk.xcodeproj -scheme TadpoleTalk \
   -destination 'platform=iOS Simulator,name=iPhone 16'
 ```
-- Unit tests (`SpeechStepsTests`): persistence, view-model logic, content decoding, export.
-- UI tests (`SpeechStepsUITests`): first-run, add-target, and a full practice flow via page
+- Unit tests (`TadpoleTalkTests`): persistence, view-model logic, content decoding, export.
+- UI tests (`TadpoleTalkUITests`): first-run, add-target, and a full practice flow via page
   objects (launch with `-localStore` for a clean in-memory run).
 - CI (`.github/workflows/ci.yml`) runs SwiftLint + tests on iPhone and iPad simulators.
 

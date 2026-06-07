@@ -90,7 +90,7 @@ private struct SidebarLayout: View {
                         .accessibilityIdentifier(section.a11yID)
                 }
             }
-            .navigationTitle("Speech Steps")
+            .navigationTitle("Tadpole Talk")
         } detail: {
             MainView.destination(selection ?? .today, child: child)
                 .id(selection)

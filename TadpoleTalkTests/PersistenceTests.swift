@@ -1,6 +1,6 @@
 import XCTest
 import SwiftData
-@testable import SpeechSteps
+@testable import TadpoleTalk
 
 @MainActor
 final class PersistenceTests: XCTestCase {

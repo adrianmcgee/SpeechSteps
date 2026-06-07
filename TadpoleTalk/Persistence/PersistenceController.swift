@@ -12,12 +12,12 @@ import os
 final class PersistenceController {
     let container: ModelContainer
 
-    static let log = Logger(subsystem: "com.adrianmcgee.speechsteps", category: "persistence")
+    static let log = Logger(subsystem: "com.adrianmcgee.tadpoletalk", category: "persistence")
 
     init(inMemory: Bool = false) {
         Self.ensureApplicationSupportExists()
 
-        let schema = Schema(versionedSchema: SpeechStepsSchemaV1.self)
+        let schema = Schema(versionedSchema: TadpoleTalkSchemaV1.self)
         // Unit/UI tests pass "-localStore" (or run under XCTest) to force an isolated,
         // throwaway store so a test run never touches real on-device data.
         let env = ProcessInfo.processInfo.environment
@@ -26,14 +26,14 @@ final class PersistenceController {
             || ProcessInfo.processInfo.arguments.contains("-localStore")
 
         let config = ModelConfiguration(
-            "SpeechSteps",
+            "TadpoleTalk",
             schema: schema,
             isStoredInMemoryOnly: memory,
             cloudKitDatabase: .none
         )
         do {
             self.container = try ModelContainer(
-                for: schema, migrationPlan: SpeechStepsMigrationPlan.self, configurations: config
+                for: schema, migrationPlan: TadpoleTalkMigrationPlan.self, configurations: config
             )
         } catch {
             fatalError("Could not create ModelContainer: \(error)")

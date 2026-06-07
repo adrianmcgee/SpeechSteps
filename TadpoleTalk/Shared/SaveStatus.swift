@@ -32,7 +32,7 @@ struct SaveFailure: Identifiable, Equatable {
 }
 
 extension ModelContext {
-    private static let log = Logger(subsystem: "com.adrianmcgee.speechsteps", category: "persistence")
+    private static let log = Logger(subsystem: "com.adrianmcgee.tadpoletalk", category: "persistence")
 
     /// Save, and if it throws, log it and surface a banner instead of swallowing or
     /// crashing. Returns whether the save succeeded.

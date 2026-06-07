@@ -1,4 +1,4 @@
-# SwiftLint configuration for SpeechSteps.
+# SwiftLint configuration for Tadpole Talk.
 #
 # CI runs `swiftlint lint` WITHOUT `--strict`, so warnings annotate but don't fail the
 # build. Flip CI to `--strict` once warnings are at zero.
@@ -17,7 +17,7 @@ opt_in_rules:
 
 excluded:
   - build
-  - SpeechSteps.xcodeproj
+  - TadpoleTalk.xcodeproj
   - .build
 
 line_length:

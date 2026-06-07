@@ -1,5 +1,5 @@
 import XCTest
-@testable import SpeechSteps
+@testable import TadpoleTalk
 
 /// The bundled reference content is shipped knowledge the app leans on, so a malformed
 /// edit should fail loudly in CI rather than silently empty a library.

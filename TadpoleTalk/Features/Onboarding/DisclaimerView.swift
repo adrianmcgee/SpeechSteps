@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Shown once before anything else. Speech Steps supports therapy a speech pathologist
+/// Shown once before anything else. Tadpole Talk supports therapy a speech pathologist
 /// directs — it does not diagnose or replace them — and the parent acknowledges that here.
 struct DisclaimerView: View {
     @AppStorage("hasAcceptedDisclaimer") private var hasAcceptedDisclaimer = false
@@ -12,7 +12,7 @@ struct DisclaimerView: View {
                     Image(systemName: "bubble.left.and.text.bubble.right.fill")
                         .font(.system(size: 52))
                         .foregroundStyle(Theme.brand)
-                    Text("Welcome to Speech Steps")
+                    Text("Welcome to Tadpole Talk")
                         .font(.largeTitle.bold())
                         .foregroundStyle(Theme.label)
                     Text("A calm companion for families practising at home between speech therapy sessions.")

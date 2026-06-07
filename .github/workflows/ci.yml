@@ -35,8 +35,8 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild test \
-            -project SpeechSteps.xcodeproj \
-            -scheme SpeechSteps \
+            -project TadpoleTalk.xcodeproj \
+            -scheme TadpoleTalk \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO
@@ -47,9 +47,9 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild test \
-            -project SpeechSteps.xcodeproj \
-            -scheme SpeechSteps \
-            -only-testing:SpeechStepsTests \
+            -project TadpoleTalk.xcodeproj \
+            -scheme TadpoleTalk \
+            -only-testing:TadpoleTalkTests \
             -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M4)' \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO

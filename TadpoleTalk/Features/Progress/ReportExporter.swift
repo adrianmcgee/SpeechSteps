@@ -26,7 +26,7 @@ struct ReportExporter {
     func writeCSV(for child: Child) -> URL? {
         let csv = makeCSV(for: child)
         let url = FileManager.default.temporaryDirectory
-            .appendingPathComponent("SpeechSteps-\(safeName(child)).csv")
+            .appendingPathComponent("TadpoleTalk-\(safeName(child)).csv")
         do { try csv.write(to: url, atomically: true, encoding: .utf8); return url }
         catch { return nil }
     }
@@ -36,7 +36,7 @@ struct ReportExporter {
         let pageRect = CGRect(x: 0, y: 0, width: 595, height: 842) // A4 @ 72dpi
         let renderer = UIGraphicsPDFRenderer(bounds: pageRect)
         let url = FileManager.default.temporaryDirectory
-            .appendingPathComponent("SpeechSteps-\(safeName(child)).pdf")
+            .appendingPathComponent("TadpoleTalk-\(safeName(child)).pdf")
 
         let targets = vm.perTarget(child)
         let dateFmt = DateFormatter(); dateFmt.dateStyle = .medium
@@ -47,7 +47,7 @@ struct ReportExporter {
                 var y: CGFloat = 48
                 let left: CGFloat = 48
 
-                draw("Speech Steps — practice summary", at: CGPoint(x: left, y: y), font: .boldSystemFont(ofSize: 22))
+                draw("Tadpole Talk — practice summary", at: CGPoint(x: left, y: y), font: .boldSystemFont(ofSize: 22))
                 y += 30
                 draw("\(child.name) · generated \(dateFmt.string(from: Date()))",
                      at: CGPoint(x: left, y: y), font: .systemFont(ofSize: 12), color: .darkGray)

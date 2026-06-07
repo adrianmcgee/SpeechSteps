@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct SpeechStepsApp: App {
+struct TadpoleTalkApp: App {
     @State private var persistence = PersistenceController()
 
     init() {

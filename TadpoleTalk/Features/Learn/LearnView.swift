@@ -30,7 +30,7 @@ struct LearnView: View {
                         Label("About & disclaimer", systemImage: "info.circle")
                     }
                 } footer: {
-                    Text("Speech Steps supports therapy directed by your speech pathologist. It does not diagnose or replace professional care.")
+                    Text("Tadpole Talk supports therapy directed by your speech pathologist. It does not diagnose or replace professional care.")
                 }
             }
             .navigationTitle("Learn")
@@ -119,7 +119,7 @@ extension LearnView {
         title: "About & disclaimer",
         symbol: "info.circle",
         body: [
-            "Speech Steps is a home-practice companion for families of children with Childhood Apraxia of Speech. "
+            "Tadpole Talk is a home-practice companion for families of children with Childhood Apraxia of Speech. "
                 + "It is designed to be used alongside therapy directed by a qualified speech pathologist.",
             "It does not diagnose, assess, or treat any condition, and it is not a substitute for professional advice. Always check new targets and techniques with your speech pathologist.",
             "Your privacy matters: everything you enter stays on this device. There is no account, no tracking, and nothing is uploaded."

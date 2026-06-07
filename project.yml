@@ -1,4 +1,4 @@
-name: SpeechSteps
+name: TadpoleTalk
 options:
   bundleIdPrefix: com.adrianmcgee
   deploymentTarget:
@@ -12,19 +12,20 @@ settings:
     GENERATE_INFOPLIST_FILE: YES
     ENABLE_USER_SCRIPT_SANDBOXING: YES
 targets:
-  SpeechSteps:
+  TadpoleTalk:
     type: application
     platform: iOS
     sources:
-      - path: SpeechSteps
+      - path: TadpoleTalk
     info:
-      path: SpeechSteps/Info.plist
+      path: TadpoleTalk/Info.plist
       properties:
         # Wire bundle versions to the build settings so `xcodegen generate` keeps them
         # instead of resetting to its defaults — a hardcoded build number gets rejected
         # on upload ("bundle version must be higher").
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        CFBundleDisplayName: "Tadpole Talk"
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
@@ -42,32 +43,32 @@ targets:
         NSCameraUsageDescription: "Record a short video of your therapist's sound or sign demonstration to play back during home practice."
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adrianmcgee.speechsteps
+        PRODUCT_BUNDLE_IDENTIFIER: com.adrianmcgee.tadpoletalk
         GENERATE_INFOPLIST_FILE: NO
         CODE_SIGN_STYLE: Automatic
         TARGETED_DEVICE_FAMILY: "1,2"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         SWIFT_EMIT_LOC_STRINGS: YES
         LOCALIZATION_PREFERS_STRING_CATALOGS: YES
-  SpeechStepsTests:
+  TadpoleTalkTests:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - path: SpeechStepsTests
+      - path: TadpoleTalkTests
     dependencies:
-      - target: SpeechSteps
+      - target: TadpoleTalk
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adrianmcgee.speechsteps.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.adrianmcgee.tadpoletalk.tests
         GENERATE_INFOPLIST_FILE: YES
-  SpeechStepsUITests:
+  TadpoleTalkUITests:
     type: bundle.ui-testing
     platform: iOS
     sources:
-      - path: SpeechStepsUITests
+      - path: TadpoleTalkUITests
     dependencies:
-      - target: SpeechSteps
+      - target: TadpoleTalk
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adrianmcgee.speechsteps.uitests
+        PRODUCT_BUNDLE_IDENTIFIER: com.adrianmcgee.tadpoletalk.uitests
         GENERATE_INFOPLIST_FILE: YES

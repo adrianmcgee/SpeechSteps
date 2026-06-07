@@ -1,13 +1,13 @@
 import XCTest
 import SwiftData
-@testable import SpeechSteps
+@testable import TadpoleTalk
 
 /// Shared helpers for the unit tests: an isolated in-memory store and a few builders so
 /// each test starts from a clean, known state without touching real on-device data.
 enum TestSupport {
     @MainActor
     static func makeContext() throws -> ModelContext {
-        let schema = Schema(versionedSchema: SpeechStepsSchemaV1.self)
+        let schema = Schema(versionedSchema: TadpoleTalkSchemaV1.self)
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: schema, configurations: config)
         return ModelContext(container)

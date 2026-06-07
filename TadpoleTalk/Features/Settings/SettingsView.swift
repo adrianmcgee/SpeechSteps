@@ -64,7 +64,7 @@ struct SettingsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: Theme.sp4) {
                 Text("Private by design").font(.title2.bold()).foregroundStyle(Theme.label)
-                Text("Speech Steps keeps your child's profile, targets, and practice history only on this device. "
+                Text("Tadpole Talk keeps your child's profile, targets, and practice history only on this device. "
                     + "There is no account to create, no analytics, and nothing is sent to any server. "
                     + "When you export a report, you choose exactly where it goes.")
                     .font(.body).foregroundStyle(Theme.label2)

@@ -1,10 +1,10 @@
-# App Store listing — Speech Steps
+# App Store listing — Tadpole Talk
 
 Draft metadata for the App Store Connect record. Edit freely before submission.
 
 ## Name & subtitle
-- **Name:** Speech Steps
-- **Subtitle:** Home practice for apraxia (CAS)
+- **Name:** Tadpole Talk
+- **Subtitle:** Gentle home speech practice for kids
 
 ## Category
 - Primary: **Education** (or **Medical** — Education avoids extra medical-claim scrutiny).
@@ -20,7 +20,7 @@ Short, parent-led speech practice for children with Childhood Apraxia of Speech 
 and sign references, gentle reminders, and progress you can share with your therapist.
 
 ## Description
-Speech Steps is a calm, private companion for families practising at home between speech
+Tadpole Talk is a calm, private companion for families practising at home between speech
 therapy sessions for Childhood Apraxia of Speech (CAS).
 
 Built around how CAS practice actually works:
@@ -35,16 +35,16 @@ Built around how CAS practice actually works:
 Private by design: everything stays on your device. No account, no tracking, nothing
 uploaded.
 
-Speech Steps supports therapy directed by a qualified speech pathologist. It does not
+Tadpole Talk supports therapy directed by a qualified speech pathologist. It does not
 diagnose, assess, or replace professional care.
 
 ## Keywords (≤100 chars, comma-separated)
 apraxia,CAS,speech therapy,toddler speech,SLP,articulation,key word sign,speech delay,praxis,kids speech
 
 ## URLs
-- Support URL: `https://adrianmcgee.github.io/SpeechSteps/support.html`
-- Marketing URL: `https://adrianmcgee.github.io/SpeechSteps/`
-- Privacy Policy URL: `https://adrianmcgee.github.io/SpeechSteps/privacy.html`
+- Support URL: `https://adrianmcgee.github.io/TadpoleTalk/support.html`
+- Marketing URL: `https://adrianmcgee.github.io/TadpoleTalk/`
+- Privacy Policy URL: `https://adrianmcgee.github.io/TadpoleTalk/privacy.html`
 
 (Enable GitHub Pages → Settings → Pages → Source: `main` / `/docs`.)
 

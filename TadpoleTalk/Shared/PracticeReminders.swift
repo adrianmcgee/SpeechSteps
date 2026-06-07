@@ -36,7 +36,7 @@ struct PracticeReminders {
             components.minute = Self.slots[i].minute
 
             let content = UNMutableNotificationContent()
-            content.title = "Speech Steps"
+            content.title = "Tadpole Talk"
             content.body = Self.messages[i % Self.messages.count]
             content.sound = .default
             content.categoryIdentifier = Self.categoryID
