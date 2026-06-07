@@ -8,6 +8,7 @@ struct TodayView: View {
     @Environment(\.modelContext) private var context
     @State private var vm = HomeViewModel()
     @State private var showingPractice = false
+    @State private var showingSettings = false
 
     private var activeTargets: [WordTarget] { child.activeTargets }
 
@@ -27,8 +28,20 @@ struct TodayView: View {
             .background(Theme.bg.ignoresSafeArea())
             .navigationTitle("Today")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button { showingSettings = true } label: {
+                        Image(systemName: "gearshape.fill")
+                    }
+                    .accessibilityLabel("Settings")
+                    .accessibilityIdentifier("home.settings")
+                }
+            }
             .fullScreenCover(isPresented: $showingPractice) {
                 PracticeSessionView(child: child, targets: activeTargets)
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView(child: child) { showingSettings = false }
             }
         }
     }

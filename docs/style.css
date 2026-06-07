@@ -1,0 +1,60 @@
+:root {
+  --brand: #3B82C4;
+  --brand-ink: #2C649A;
+  --accent: #F2A03D;
+  --bg: #F7FBFF;
+  --card: #ffffff;
+  --label: #1E2A36;
+  --label2: #5A6B7B;
+  --hairline: #1B3A5A24;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #6FB0E8; --brand-ink: #9CCBF2; --accent: #F6B968;
+    --bg: #10171F; --card: #1B2530; --label: #E8EEF4; --label2: #9DAFBF;
+    --hairline: #FFFFFF1F;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--label);
+  line-height: 1.6;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+header.site {
+  display: flex; align-items: center; gap: .75rem;
+  padding: 1.25rem; max-width: 720px; margin: 0 auto;
+}
+header.site .logo {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--brand); color: #fff; display: grid; place-items: center;
+  font-size: 1.5rem; font-weight: 700;
+}
+header.site h1 { font-size: 1.15rem; margin: 0; }
+nav a { color: var(--brand-ink); text-decoration: none; margin-left: 1rem; font-weight: 600; }
+nav a:hover { text-decoration: underline; }
+.spacer { flex: 1; }
+h1.title { font-size: 2rem; margin: .5rem 0 1rem; }
+h2 { margin-top: 2rem; color: var(--label); }
+p, li { color: var(--label2); }
+.card {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 18px; padding: 1.25rem 1.5rem; margin: 1rem 0;
+}
+.lead { font-size: 1.15rem; color: var(--label2); }
+.pill {
+  display: inline-block; background: color-mix(in srgb, var(--brand) 14%, transparent);
+  color: var(--brand-ink); padding: .2rem .7rem; border-radius: 999px;
+  font-size: .85rem; font-weight: 600; margin: .2rem .3rem .2rem 0;
+}
+a.button {
+  display: inline-block; background: var(--brand); color: #fff;
+  padding: .7rem 1.2rem; border-radius: 12px; text-decoration: none; font-weight: 700;
+}
+footer { border-top: 1px solid var(--hairline); margin-top: 3rem; padding-top: 1.25rem;
+  font-size: .9rem; color: var(--label2); }
+footer a { color: var(--brand-ink); }
+.muted { color: var(--label2); font-size: .95rem; }
