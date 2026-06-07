@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: Build, lint & test
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Install tools
+        run: brew install xcodegen swiftlint
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: SwiftLint
+        run: swiftlint lint --reporter github-actions-logging
+
+      # Full suite (unit + UI) on iPhone.
+      - name: Build & test (iPhone)
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project SpeechSteps.xcodeproj \
+            -scheme SpeechSteps \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
+
+      # iPad: build everything and run the logic (unit) tests. UI automation of the
+      # portrait split-view sidebar is brittle, so the UI suite runs on iPhone only.
+      - name: Build & unit test (iPad)
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project SpeechSteps.xcodeproj \
+            -scheme SpeechSteps \
+            -only-testing:SpeechStepsTests \
+            -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M4)' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO

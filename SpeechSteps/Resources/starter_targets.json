@@ -1,0 +1,33 @@
+[
+  { "text": "more", "shape": "cv", "phonemeIDs": ["m"] },
+  { "text": "bee", "shape": "cv", "phonemeIDs": ["b", "ee"] },
+  { "text": "go", "shape": "cv", "phonemeIDs": ["g", "oh"] },
+  { "text": "me", "shape": "cv", "phonemeIDs": ["m", "ee"] },
+  { "text": "boo", "shape": "cv", "phonemeIDs": ["b", "oo"] },
+  { "text": "hi", "shape": "cv", "phonemeIDs": ["h"] },
+  { "text": "moo", "shape": "cv", "phonemeIDs": ["m", "oo"] },
+
+  { "text": "up", "shape": "vc", "phonemeIDs": ["p"] },
+  { "text": "on", "shape": "vc", "phonemeIDs": ["n"] },
+  { "text": "egg", "shape": "vc", "phonemeIDs": ["g"] },
+  { "text": "off", "shape": "vc", "phonemeIDs": ["f"] },
+
+  { "text": "cup", "shape": "cvc", "phonemeIDs": ["k", "p"] },
+  { "text": "dog", "shape": "cvc", "phonemeIDs": ["d", "g"] },
+  { "text": "cat", "shape": "cvc", "phonemeIDs": ["k", "t"] },
+  { "text": "ball", "shape": "cvc", "phonemeIDs": ["b"] },
+  { "text": "bed", "shape": "cvc", "phonemeIDs": ["b", "d"] },
+  { "text": "hat", "shape": "cvc", "phonemeIDs": ["h", "t"] },
+
+  { "text": "mama", "shape": "cvcv", "phonemeIDs": ["m", "ah"] },
+  { "text": "baby", "shape": "cvcv", "phonemeIDs": ["b", "ee"] },
+  { "text": "dada", "shape": "cvcv", "phonemeIDs": ["d", "ah"] },
+  { "text": "water", "shape": "cvcv", "phonemeIDs": ["w", "t"] },
+  { "text": "puppy", "shape": "cvcv", "phonemeIDs": ["p"] },
+
+  { "text": "rabbit", "shape": "cvcvc", "phonemeIDs": ["b", "t"] },
+  { "text": "banana", "shape": "cvcvc", "phonemeIDs": ["b", "n"] },
+
+  { "text": "spoon", "shape": "other", "phonemeIDs": ["p", "n"] },
+  { "text": "stop", "shape": "other", "phonemeIDs": ["t", "p"] }
+]

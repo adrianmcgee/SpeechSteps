@@ -1,0 +1,54 @@
+# SwiftLint configuration for SpeechSteps.
+#
+# CI runs `swiftlint lint` WITHOUT `--strict`, so warnings annotate but don't fail the
+# build. Flip CI to `--strict` once warnings are at zero.
+
+disabled_rules:
+  - todo
+  - trailing_comma
+  - multiple_closures_with_trailing_closure
+
+opt_in_rules:
+  - closure_spacing
+  - first_where
+  - contains_over_first_not_nil
+  - last_where
+  - sorted_first_last
+
+excluded:
+  - build
+  - SpeechSteps.xcodeproj
+  - .build
+
+line_length:
+  warning: 140
+  error: 200
+  ignores_comments: true
+  ignores_urls: true
+
+type_body_length:
+  warning: 400
+  error: 600
+
+file_length:
+  warning: 500
+  error: 800
+
+function_body_length:
+  warning: 80
+  error: 160
+
+cyclomatic_complexity:
+  warning: 15
+  error: 25
+
+identifier_name:
+  min_length: 1
+  max_length: 50
+  excluded:
+    - id
+    - x
+    - y
+
+type_name:
+  max_length: 50

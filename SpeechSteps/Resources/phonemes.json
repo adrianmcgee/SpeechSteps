@@ -1,0 +1,107 @@
+[
+  {
+    "id": "p", "ipa": "p", "label": "p as in pig", "kind": "consonant",
+    "place": "Both lips together", "manner": "A little pop of air",
+    "voicing": "voiceless",
+    "howTo": "Press your lips together, then pop them open with a quiet puff. No voice — just air.",
+    "exampleWords": ["pig", "up", "pop", "happy"], "articulator": "lips"
+  },
+  {
+    "id": "b", "ipa": "b", "label": "b as in ball", "kind": "consonant",
+    "place": "Both lips together", "manner": "A pop of air with your voice on",
+    "voicing": "voiced",
+    "howTo": "Press your lips together and turn your voice on as they pop open. Feel your throat buzz.",
+    "exampleWords": ["ball", "baby", "bib", "bubble"], "articulator": "lips"
+  },
+  {
+    "id": "m", "ipa": "m", "label": "m as in mum", "kind": "consonant",
+    "place": "Both lips together", "manner": "Humming through your nose",
+    "voicing": "voiced",
+    "howTo": "Keep your lips gently closed and hum. The sound comes out your nose — feel your lips tickle.",
+    "exampleWords": ["mum", "more", "me", "yummy"], "articulator": "lips"
+  },
+  {
+    "id": "w", "ipa": "w", "label": "w as in water", "kind": "consonant",
+    "place": "Rounded lips", "manner": "A smooth glide with your voice on",
+    "voicing": "voiced",
+    "howTo": "Round your lips like a small kiss, voice on, then glide into the next sound.",
+    "exampleWords": ["water", "we", "wow", "away"], "articulator": "rounded"
+  },
+  {
+    "id": "h", "ipa": "h", "label": "h as in hat", "kind": "consonant",
+    "place": "Open mouth", "manner": "A gentle breath of air",
+    "voicing": "voiceless",
+    "howTo": "Open your mouth and let a soft breath out, like fogging up a window.",
+    "exampleWords": ["hat", "hi", "hop", "behind"], "articulator": "open"
+  },
+  {
+    "id": "t", "ipa": "t", "label": "t as in top", "kind": "consonant",
+    "place": "Tongue tip behind top teeth", "manner": "A little tap of air",
+    "voicing": "voiceless",
+    "howTo": "Tap your tongue tip on the bumpy spot behind your top teeth, then release a quiet tap. No voice.",
+    "exampleWords": ["top", "two", "cat", "tea"], "articulator": "tongueTip"
+  },
+  {
+    "id": "d", "ipa": "d", "label": "d as in dog", "kind": "consonant",
+    "place": "Tongue tip behind top teeth", "manner": "A tap with your voice on",
+    "voicing": "voiced",
+    "howTo": "Tap your tongue tip behind your top teeth with your voice on. Feel the buzz.",
+    "exampleWords": ["dog", "daddy", "duck", "red"], "articulator": "tongueTip"
+  },
+  {
+    "id": "n", "ipa": "n", "label": "n as in no", "kind": "consonant",
+    "place": "Tongue tip behind top teeth", "manner": "Humming through your nose",
+    "voicing": "voiced",
+    "howTo": "Rest your tongue tip behind your top teeth and hum out your nose.",
+    "exampleWords": ["no", "night", "moon", "banana"], "articulator": "tongueTip"
+  },
+  {
+    "id": "k", "ipa": "k", "label": "k as in car", "kind": "consonant",
+    "place": "Back of the tongue", "manner": "A pop of air at the back",
+    "voicing": "voiceless",
+    "howTo": "Lift the back of your tongue to the roof at the back, then pop it open. No voice.",
+    "exampleWords": ["car", "cat", "key", "back"], "articulator": "tongueBack"
+  },
+  {
+    "id": "g", "ipa": "g", "label": "g as in go", "kind": "consonant",
+    "place": "Back of the tongue", "manner": "A back pop with your voice on",
+    "voicing": "voiced",
+    "howTo": "Lift the back of your tongue and pop it open with your voice on. Feel the buzz.",
+    "exampleWords": ["go", "girl", "dog", "again"], "articulator": "tongueBack"
+  },
+  {
+    "id": "f", "ipa": "f", "label": "f as in fish", "kind": "consonant",
+    "place": "Top teeth on bottom lip", "manner": "A long stream of air",
+    "voicing": "voiceless",
+    "howTo": "Rest your top teeth on your bottom lip and blow a long, quiet stream of air.",
+    "exampleWords": ["fish", "fun", "off", "phone"], "articulator": "lips"
+  },
+  {
+    "id": "ah", "ipa": "ɑ", "label": "ah as in cot", "kind": "vowel",
+    "place": "Mouth wide open", "manner": "Voice on, mouth open",
+    "voicing": "voiced",
+    "howTo": "Open your mouth wide like the doctor's 'aah' and turn your voice on.",
+    "exampleWords": ["car", "cat", "dog", "mama"], "articulator": "open"
+  },
+  {
+    "id": "ee", "ipa": "i", "label": "ee as in see", "kind": "vowel",
+    "place": "Smile, tongue high", "manner": "Voice on, lips smiling",
+    "voicing": "voiced",
+    "howTo": "Smile wide and say 'eee' with your voice on, like a happy smile sound.",
+    "exampleWords": ["see", "me", "bee", "key"], "articulator": "open"
+  },
+  {
+    "id": "oo", "ipa": "u", "label": "oo as in moon", "kind": "vowel",
+    "place": "Rounded lips", "manner": "Voice on, lips round",
+    "voicing": "voiced",
+    "howTo": "Round your lips into a small circle and say 'ooo' with your voice on.",
+    "exampleWords": ["moon", "you", "boo", "shoe"], "articulator": "rounded"
+  },
+  {
+    "id": "oh", "ipa": "oʊ", "label": "oh as in go", "kind": "vowel",
+    "place": "Rounded lips", "manner": "Voice on, lips round",
+    "voicing": "voiced",
+    "howTo": "Round your lips and say 'ohh' with your voice on, like a surprised 'oh!'.",
+    "exampleWords": ["go", "no", "boat", "home"], "articulator": "rounded"
+  }
+]

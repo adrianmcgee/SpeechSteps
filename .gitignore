@@ -1,0 +1,22 @@
+# Xcode / build
+build/
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+*.xcuserstate
+.DS_Store
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Secrets (App Store Connect API key, etc.)
+build/secrets/
+*.p8
+AuthKey_*.p8
+.env
+
+# Node (site tooling, if any)
+node_modules/
