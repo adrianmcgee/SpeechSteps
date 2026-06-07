@@ -42,9 +42,9 @@ diagnose, assess, or replace professional care.
 apraxia,CAS,speech therapy,toddler speech,SLP,articulation,key word sign,speech delay,praxis,kids speech
 
 ## URLs
-- Support URL: `https://<your-github-username>.github.io/SpeechSteps/support.html`
-- Marketing URL: `https://<your-github-username>.github.io/SpeechSteps/`
-- Privacy Policy URL: `https://<your-github-username>.github.io/SpeechSteps/privacy.html`
+- Support URL: `https://adrianmcgee.github.io/SpeechSteps/support.html`
+- Marketing URL: `https://adrianmcgee.github.io/SpeechSteps/`
+- Privacy Policy URL: `https://adrianmcgee.github.io/SpeechSteps/privacy.html`
 
 (Enable GitHub Pages → Settings → Pages → Source: `main` / `/docs`.)
 
