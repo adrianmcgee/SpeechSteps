@@ -11,6 +11,7 @@ struct PracticeSessionView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     @State private var vm: PracticeSessionViewModel?
+    @State private var howToPhoneme: Phoneme?
 
     var body: some View {
         Group {
@@ -54,6 +55,11 @@ struct PracticeSessionView: View {
                 set: { vm.celebrate = $0 }
             ))
         }
+        .sheet(item: $howToPhoneme) { phoneme in
+            NavigationStack {
+                PhonemeDetailView(phoneme: phoneme)
+            }
+        }
     }
 
     private func topBar(_ vm: PracticeSessionViewModel) -> some View {
@@ -77,7 +83,14 @@ struct PracticeSessionView: View {
     private func wordCard(_ vm: PracticeSessionViewModel) -> some View {
         VStack(spacing: Theme.sp3) {
             if let phoneme = vm.currentPhoneme() {
-                MouthDiagram(articulator: phoneme.articulator).frame(height: 120)
+                MouthDiagram(phoneme: phoneme, style: .standard, animated: true).frame(height: 120)
+                Button {
+                    howToPhoneme = phoneme
+                } label: {
+                    Label("How to make this sound", systemImage: "info.circle")
+                        .font(.subheadline.weight(.medium))
+                }
+                .foregroundStyle(Theme.brandInk)
             }
             Text(vm.currentTarget?.text ?? "")
                 .font(.system(size: 56, weight: .bold, design: .rounded))
@@ -160,6 +173,8 @@ private struct SessionSummaryView: View {
         ZStack {
             Theme.bg.ignoresSafeArea()
             VStack(spacing: Theme.sp5) {
+                TadpoleMascot()
+                    .frame(width: 120, height: 120)
                 Image(systemName: "star.circle.fill")
                     .font(.system(size: 84)).foregroundStyle(Theme.accent)
                 Text("Great practising!").font(.largeTitle.bold()).foregroundStyle(Theme.label)

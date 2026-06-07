@@ -6,10 +6,12 @@ import SwiftUI
 struct PhonemeDetailView: View {
     let phoneme: Phoneme
 
+    @State private var showingVideo = false
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Theme.sp5) {
-                MouthDiagram(articulator: phoneme.articulator)
+                MouthDiagram(phoneme: phoneme, style: .full, animated: true)
                     .frame(height: 180)
                     .frame(maxWidth: .infinity)
                     .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.corner))
@@ -20,6 +22,13 @@ struct PhonemeDetailView: View {
                         .font(.subheadline).foregroundStyle(Theme.label2)
                 }
 
+                if let url = phoneme.videoURL {
+                    WatchButton { showingVideo = true }
+                        .sheet(isPresented: $showingVideo) {
+                            VideoPlayerSheet(title: phoneme.label, videoURL: url)
+                        }
+                }
+
                 VStack(alignment: .leading, spacing: Theme.sp3) {
                     fact("Where", phoneme.place, "mappin.circle.fill")
                     fact("How", phoneme.manner, "waveform")
@@ -27,6 +36,10 @@ struct PhonemeDetailView: View {
                 }
                 .padding(Theme.sp4)
                 .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.corner))
+
+                if let cue = phoneme.handCue {
+                    handCueCard(cue)
+                }
 
                 calloutCard
 
@@ -53,15 +66,30 @@ struct PhonemeDetailView: View {
     }
 
     private var calloutCard: some View {
-        HStack(alignment: .top, spacing: Theme.sp3) {
-            Image(systemName: "hand.point.up.left.fill").foregroundStyle(Theme.accent)
-            VStack(alignment: .leading, spacing: Theme.sp1) {
+        VStack(alignment: .leading, spacing: Theme.sp3) {
+            HStack(spacing: Theme.sp2) {
+                Image(systemName: "hand.point.up.left.fill").foregroundStyle(Theme.accent)
                 Text("Show your child").font(.headline).foregroundStyle(Theme.label)
-                Text(phoneme.howTo).font(.subheadline).foregroundStyle(Theme.label2)
             }
+            HowToSteps(steps: phoneme.howToSteps)
         }
         .padding(Theme.sp4)
         .background(Theme.accent.opacity(0.10), in: RoundedRectangle(cornerRadius: Theme.corner))
+    }
+
+    /// An original, plain-language hand cue a parent can make alongside the sound — not
+    /// licensed Cued Articulation artwork. Shown only when the phoneme has a `handCue`.
+    private func handCueCard(_ cue: String) -> some View {
+        VStack(alignment: .leading, spacing: Theme.sp3) {
+            HStack(spacing: Theme.sp2) {
+                Image(systemName: "hand.raised.fingers.spread.fill").foregroundStyle(Theme.brand)
+                Text("Hand cue").font(.headline).foregroundStyle(Theme.label)
+            }
+            Text(cue).font(.subheadline).foregroundStyle(Theme.label2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(Theme.sp4)
+        .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.corner))
         .accessibilityElement(children: .combine)
     }
 
@@ -81,20 +109,50 @@ struct PhonemeDetailView: View {
 struct SignDetailView: View {
     let sign: SignEntry
 
+    @State private var showingVideo = false
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Theme.sp5) {
-                Image(systemName: sign.symbol)
-                    .font(.system(size: 64))
-                    .foregroundStyle(Theme.brand)
-                    .frame(maxWidth: .infinity, minHeight: 140)
-                    .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.corner))
-                    .accessibilityHidden(true)
+                VStack(spacing: Theme.sp2) {
+                    Image(systemName: sign.symbol)
+                        .font(.system(size: 64))
+                        .foregroundStyle(Theme.brand)
+                        .frame(maxWidth: .infinity, minHeight: 140)
+                        .background(Theme.card, in: RoundedRectangle(cornerRadius: Theme.corner))
+                        // A hand badge signals this is a sign, not the gesture itself.
+                        .overlay(alignment: .topTrailing) {
+                            Image(systemName: "hand.raised.fill")
+                                .font(.subheadline)
+                                .foregroundStyle(Theme.brand)
+                                .padding(Theme.sp2)
+                                .background(Theme.brand.opacity(0.12), in: Circle())
+                                .padding(Theme.sp3)
+                        }
+                    Text("A picture reminder of the word — copy the hand shape from the steps below.")
+                        .font(.footnote).foregroundStyle(Theme.label2)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
+                }
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("Picture reminder for \(sign.word). Follow the steps below for the hand shape.")
 
                 Text(sign.word).font(.title2.bold()).foregroundStyle(Theme.label)
 
+                if let url = sign.videoURL {
+                    WatchButton { showingVideo = true }
+                        .sheet(isPresented: $showingVideo) {
+                            VideoPlayerSheet(title: sign.word, videoURL: url)
+                        }
+                }
+
                 VStack(alignment: .leading, spacing: Theme.sp3) {
-                    fact("How to sign it", sign.handshape, "hand.raised.fill")
+                    HStack(spacing: Theme.sp2) {
+                        Image(systemName: "hand.raised.fill").foregroundStyle(Theme.brand)
+                        Text("How to sign it").font(.headline).foregroundStyle(Theme.label)
+                    }
+                    HowToSteps(steps: sign.howToSteps)
+                    Divider().padding(.vertical, Theme.sp1)
                     fact("When to use it", sign.when, "clock.fill")
                 }
                 .padding(Theme.sp4)
@@ -121,5 +179,47 @@ struct SignDetailView: View {
             }
         }
         .accessibilityElement(children: .combine)
+    }
+}
+
+/// A numbered list of short "do this" steps, shared by sound and sign detail screens.
+/// A single step renders as one plain line; two or more get numbered badges.
+struct HowToSteps: View {
+    let steps: [String]
+
+    var body: some View {
+        if steps.count <= 1 {
+            Text(steps.first ?? "").font(.subheadline).foregroundStyle(Theme.label2)
+        } else {
+            VStack(alignment: .leading, spacing: Theme.sp3) {
+                ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
+                    HStack(alignment: .top, spacing: Theme.sp3) {
+                        Text("\(index + 1)")
+                            .font(.caption.bold()).foregroundStyle(Theme.onColor)
+                            .frame(width: 22, height: 22)
+                            .background(Theme.accent, in: Circle())
+                        Text(step).font(.subheadline).foregroundStyle(Theme.label)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+            }
+        }
+    }
+}
+
+/// A "Watch how" button shown only when a sound or sign has a demo clip.
+struct WatchButton: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: Theme.sp2) {
+                Image(systemName: "play.circle.fill")
+                Text("Watch how").font(.headline)
+            }
+            .frame(maxWidth: .infinity, minHeight: Theme.btnHeight)
+        }
+        .buttonStyle(.borderedProminent)
     }
 }

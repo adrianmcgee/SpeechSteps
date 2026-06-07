@@ -111,8 +111,13 @@ struct TodayView: View {
         VStack(alignment: .leading, spacing: Theme.sp3) {
             Text("This week's words").font(.headline).foregroundStyle(Theme.label)
             if activeTargets.isEmpty {
-                Text("Mark a few words as “this week” in Targets and they'll appear here.")
-                    .font(.subheadline).foregroundStyle(Theme.label2)
+                HStack(spacing: Theme.sp3) {
+                    TadpoleMascot()
+                        .frame(width: 56, height: 56)
+                    Text("Mark a few words as “this week” in Targets and they'll appear here.")
+                        .font(.subheadline).foregroundStyle(Theme.label2)
+                    Spacer(minLength: 0)
+                }
             } else {
                 ForEach(activeTargets) { target in
                     HStack {

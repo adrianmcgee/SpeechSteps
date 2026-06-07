@@ -14,6 +14,8 @@ struct OnboardingView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: Theme.sp6) {
                 VStack(alignment: .leading, spacing: Theme.sp2) {
+                    TadpoleMascot()
+                        .frame(width: 96, height: 96)
                     Text("Let's set up").font(.largeTitle.bold()).foregroundStyle(Theme.label)
                     Text("Tell us a little about your child so we can personalise things.")
                         .font(.title3).foregroundStyle(Theme.label2)

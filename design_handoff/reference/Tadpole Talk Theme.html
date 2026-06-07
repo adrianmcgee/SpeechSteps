@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tadpole Talk — Visual Theme &amp; App Icon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* —— Bright Sky (light) — from Theme.swift —— */
+  --brand:#3B82C4; --brand-ink:#2C649A; --accent:#F2A03D; --accent-ink:#D27F1E;
+  --bg:#F7FBFF; --bg-grouped:#EDF4FB; --card:#FFFFFF;
+  --fill:rgba(27,58,90,.08); --hairline:rgba(27,58,90,.14);
+  --label:#1E2A36; --label2:#5A6B7B; --label3:#92A2B2; --on:#fff;
+  --correct:#3FA66A; --approx:#E9A23B; --tryagain:#6C8094;
+  --teal:#3BA8A0; --pink:#D98BA0; --purple:#8B7FD0; --red:#D5694E;
+  --shadow:0 10px 30px rgba(27,58,90,.10), 0 2px 6px rgba(27,58,90,.06);
+  --shadow-sm:0 4px 14px rgba(27,58,90,.08);
+  --r-lg:24px; --r-md:16px; --r-sm:12px;
+  --sp1:4px; --sp2:8px; --sp3:12px; --sp4:16px; --sp5:20px; --sp6:24px;
+  --sans:"Nunito",system-ui,sans-serif; --round:"Baloo 2",var(--sans);
+}
+.scheme-dark{
+  --brand:#6FB0E8; --brand-ink:#9CCBF2; --accent:#F6B968; --accent-ink:#F9CB8E;
+  --bg:#10171F; --bg-grouped:#141C26; --card:#1B2530;
+  --fill:rgba(255,255,255,.08); --hairline:rgba(255,255,255,.12);
+  --label:#E8EEF4; --label2:#9DAFBF; --label3:#62748A; --on:#10171F;
+  --correct:#5FC489; --approx:#F0BA62; --tryagain:#8AA0B4;
+  --teal:#5FC6BE; --pink:#E6A3B5; --purple:#A99EE6; --red:#E2856A;
+  --shadow:0 16px 40px rgba(0,0,0,.5); --shadow-sm:0 4px 16px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:var(--sans); color:var(--label);
+  background:
+    radial-gradient(120% 70% at 80% -10%, #DCF0FA 0%, rgba(220,240,250,0) 55%),
+    radial-gradient(120% 60% at -10% 0%, #E6F6F2 0%, rgba(230,246,242,0) 50%),
+    #F2F8FD;
+  -webkit-font-smoothing:antialiased; line-height:1.5;
+}
+h1,h2,h3,h4{font-family:var(--round); margin:0; line-height:1.12; color:var(--label); letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1140px; margin:0 auto; padding:0 28px}
+.eyebrow{font-family:var(--round); font-weight:700; font-size:13px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--brand)}
+.muted{color:var(--label2)}
+.muted3{color:var(--label3)}
+
+/* —— Hero —— */
+.hero{position:relative; overflow:hidden; padding:64px 0 40px}
+.hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+.brandline{display:flex; align-items:center; gap:14px; margin-bottom:22px}
+.brandline .mk{width:54px; height:54px; display:grid; place-items:center;
+  background:var(--card); border-radius:16px; box-shadow:var(--shadow-sm)}
+.brandline b{font-family:var(--round); font-weight:800; font-size:24px; color:var(--brand-ink); white-space:nowrap}
+.hero h1{font-size:clamp(40px,6vw,68px); font-weight:800; color:var(--label)}
+.hero h1 .pond{color:var(--brand)}
+.hero .lede{font-size:20px; color:var(--label2); max-width:30ch; margin-top:18px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px}
+.chip{font-size:13px; font-weight:700; color:var(--brand-ink); background:rgba(59,130,196,.12);
+  padding:7px 13px; border-radius:999px}
+.hero-art{display:flex; justify-content:center; position:relative}
+.hero-art .stack{position:relative}
+.hero-art .appicon{border-radius:0; box-shadow:0 30px 60px rgba(27,58,90,.28), 0 8px 18px rgba(27,58,90,.18)}
+.hero-art .float{position:absolute; right:-6px; bottom:-10px; background:var(--card);
+  border-radius:16px; padding:10px 14px; box-shadow:var(--shadow); display:flex; gap:9px; align-items:center;
+  font-weight:700; font-size:14px; color:var(--label)}
+.hero-art .float .dot{width:10px;height:10px;border-radius:50%;background:var(--correct)}
+
+/* —— Section scaffolding —— */
+section{padding:54px 0; border-top:1px solid var(--hairline)}
+.sec-head{max-width:62ch; margin-bottom:34px}
+.sec-head h2{font-size:34px; font-weight:800; margin-top:10px}
+.sec-head p{margin-top:12px; font-size:17px; color:var(--label2)}
+
+.card{background:var(--card); border-radius:var(--r-lg); box-shadow:var(--shadow); padding:24px}
+.soft{background:var(--card); border-radius:var(--r-lg); border:1px solid var(--hairline)}
+
+/* —— Essence —— */
+.principles{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.principles .card{padding:26px}
+.principles .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px}
+.principles h3{font-size:20px;font-weight:700}
+.principles p{margin-top:8px;color:var(--label2);font-size:15.5px}
+
+/* —— Icon section —— */
+.icon-hero{display:grid;grid-template-columns:auto 1fr;gap:38px;align-items:center;
+  background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:34px 38px;margin-bottom:30px}
+.icon-hero .big .appicon{border-radius:0;box-shadow:0 22px 44px rgba(27,58,90,.22)}
+.icon-hero h3{font-size:24px;font-weight:800}
+.icon-hero p{margin-top:10px;color:var(--label2);max-width:46ch}
+.spec-list{margin-top:18px;display:flex;flex-direction:column;gap:9px}
+.spec-list div{display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--label)}
+.spec-list .tick{width:20px;height:20px;flex:none;color:var(--correct)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.icon-tile{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);
+  padding:22px;text-align:center}
+.icon-tile .appicon{border-radius:0;margin:0 auto;box-shadow:0 12px 26px rgba(27,58,90,.18)}
+.icon-tile .name{font-family:var(--round);font-weight:700;font-size:17px;margin-top:16px}
+.icon-tile .desc{font-size:13.5px;color:var(--label2);margin-top:5px}
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--on);background:var(--brand);padding:3px 9px;border-radius:999px;margin-top:10px}
+
+.variant-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.variant{border-radius:var(--r-lg);padding:24px;text-align:center}
+.variant.lt{background:#EAF4FC}
+.variant.dk{background:#0E1722}
+.variant.tn{background:#1b1b1d}
+.variant .appicon{border-radius:0;margin:0 auto;box-shadow:0 12px 26px rgba(0,0,0,.25)}
+.variant .vname{font-family:var(--round);font-weight:700;font-size:16px;margin-top:14px}
+.variant.lt .vname{color:#1E2A36}.variant.dk .vname,.variant.tn .vname{color:#fff}
+.variant .vdesc{font-size:12.5px;margin-top:4px}
+.variant.lt .vdesc{color:#5A6B7B}.variant.dk .vdesc,.variant.tn .vdesc{color:#9DAFBF}
+
+.scale-strip{display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap;
+  background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);padding:30px 32px}
+.scale-strip .unit{text-align:center}
+.scale-strip .appicon{border-radius:0;box-shadow:0 6px 16px rgba(27,58,90,.16)}
+.scale-strip .px{font-size:12px;font-weight:700;color:var(--label3);margin-top:10px}
+
+.home-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.home{border-radius:var(--r-lg);padding:34px;display:flex;flex-direction:column;align-items:center;gap:10px;min-height:200px;justify-content:center}
+.home.lt{background:linear-gradient(160deg,#BFE3F4,#8FC9E6 60%,#E9D8F0)}
+.home.dk{background:linear-gradient(160deg,#1a2a3d,#0c1622 70%,#241a33)}
+.home .appicon{border-radius:0;box-shadow:0 10px 22px rgba(0,0,0,.28)}
+.home .lab{font-size:13px;font-weight:600}
+.home.lt .lab{color:#1c2b3a}.home.dk .lab{color:#eaf3fb}
+
+/* —— Palette —— */
+.pal-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pal-panel{border-radius:var(--r-lg);padding:24px}
+.pal-panel.light{background:#FFFFFF;box-shadow:var(--shadow)}
+.pal-panel.dark{background:#10171F;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+.pal-panel h3{font-family:var(--round);font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
+.pal-panel.dark h3{color:#E8EEF4}
+.pal-panel .scheme-pill{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.pal-panel.light .scheme-pill{background:rgba(59,130,196,.14);color:#2C649A}
+.pal-panel.dark .scheme-pill{background:rgba(111,176,232,.18);color:#9CCBF2}
+.pal-group{margin-top:22px}
+.pal-head h4{font-family:var(--round);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.pal-panel.light .pal-head h4{color:#5A6B7B}.pal-panel.dark .pal-head h4{color:#9DAFBF}
+.pal-head p{font-size:12.5px;margin-top:5px}
+.pal-panel.light .pal-head p{color:#5A6B7B}.pal-panel.dark .pal-head p{color:#9DAFBF}
+.sw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.sw{display:flex;gap:12px;align-items:center}
+.sw-chip{width:52px;height:52px;border-radius:13px;flex:none;display:grid;place-items:center}
+.sw-on{font-family:var(--round);font-weight:800;font-size:16px}
+.sw-name{font-weight:700;font-size:14px}
+.pal-panel.dark .sw-name{color:#E8EEF4}
+.sw-var{font-size:11px;font-family:ui-monospace,Menlo,monospace}
+.pal-panel.light .sw-var{color:#92A2B2}.pal-panel.dark .sw-var{color:#62748A}
+.sw-hex{font-size:12px;font-weight:700;font-family:ui-monospace,Menlo,monospace}
+.pal-panel.light .sw-hex{color:#5A6B7B}.pal-panel.dark .sw-hex{color:#9DAFBF}
+.sw-badge{display:inline-block;margin-top:4px;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:999px}
+.sw-badge.aaa{background:rgba(63,166,106,.18);color:#2f7d4f}
+.sw-badge.aa{background:rgba(63,166,106,.16);color:#3a8a5b}
+.sw-badge.lg{background:rgba(233,162,59,.18);color:#a9701c}
+.sw-badge.no{background:rgba(108,128,148,.16);color:#6C8094}
+.sw-badge.n{background:rgba(108,128,148,.12);color:#8295a6}
+.pal-panel.dark .sw-badge.aaa,.pal-panel.dark .sw-badge.aa{background:rgba(95,196,137,.18);color:#7fd3a0}
+.pal-panel.dark .sw-badge.lg{background:rgba(240,186,98,.18);color:#f0ba62}
+.pal-panel.dark .sw-badge.no,.pal-panel.dark .sw-badge.n{background:rgba(138,160,180,.18);color:#9DAFBF}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px;font-size:13px;color:var(--label2)}
+.legend b{font-weight:800}
+
+/* —— Typography —— */
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.font-card{padding:28px}
+.font-card .big{font-size:84px;line-height:1;font-weight:800}
+.font-card .nm{font-family:var(--round);font-weight:800;font-size:22px;margin-top:14px}
+.font-card .role{color:var(--label2);font-size:14.5px;margin-top:6px}
+.font-card .glyphs{margin-top:14px;font-size:15px;color:var(--label3);letter-spacing:.02em}
+.scale-rows{margin-top:22px}
+.scale-row{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:baseline;
+  padding:14px 0;border-top:1px solid var(--hairline)}
+.scale-row .meta{font-size:12.5px;color:var(--label3);font-family:ui-monospace,Menlo,monospace}
+.scale-row .meta b{display:block;font-family:var(--round);font-size:14px;color:var(--label2)}
+
+/* —— Tokens —— */
+.tok-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.tok-grid .card{padding:26px}
+.tok-grid h3{font-size:19px;font-weight:700;margin-bottom:6px}
+.tok-grid .sub{color:var(--label2);font-size:14px;margin-bottom:18px}
+.radii{display:flex;gap:16px;align-items:flex-end}
+.radii .r{flex:1;background:rgba(59,130,196,.10);border:2px solid rgba(59,130,196,.3)}
+.radii .r1{height:64px;border-radius:12px}.radii .r2{height:64px;border-radius:16px}.radii .r3{height:64px;border-radius:24px}
+.radii .lab{display:block;text-align:center;margin-top:8px;font-size:12px;font-weight:700;color:var(--label2)}
+.space-row{display:flex;align-items:center;gap:14px;margin-bottom:11px;font-size:13px;color:var(--label2)}
+.space-row .bar{height:14px;background:var(--brand);border-radius:4px}
+.space-row code{font-family:ui-monospace,Menlo,monospace;color:var(--label)}
+.shadow-demo{display:flex;gap:18px}
+.shadow-demo .sd{flex:1;height:84px;border-radius:16px;background:var(--card);display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:var(--label2)}
+.shadow-demo .sd1{box-shadow:var(--shadow-sm)}.shadow-demo .sd2{box-shadow:var(--shadow)}
+.taps{display:flex;gap:14px;align-items:flex-end}
+.taps .t{background:rgba(59,130,196,.12);border:2px dashed rgba(59,130,196,.4);border-radius:14px;
+  display:grid;place-items:center;color:var(--brand-ink);font-weight:800;font-size:12px}
+.taps .t44{width:44px;height:44px}.taps .t52{width:52px;height:52px}.taps .t64{width:64px;height:64px}.taps .t120{width:120px;height:64px}
+
+/* —— Components —— */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.comp{padding:26px}
+.comp h3{font-size:18px;font-weight:700;margin-bottom:18px}
+.btn{font-family:var(--round);font-weight:700;border:none;border-radius:14px;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:16px;min-height:52px;padding:0 22px}
+.btn svg{width:20px;height:20px}
+.btn-prom{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(59,130,196,.32)}
+.btn-bord{background:transparent;color:var(--brand-ink);box-shadow:inset 0 0 0 2px rgba(59,130,196,.4)}
+.btn-text{background:transparent;color:var(--brand-ink);min-height:auto;padding:6px 8px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.caps{display:flex;flex-wrap:wrap;gap:10px}
+.cap{font-size:13px;font-weight:800;color:var(--brand-ink);background:rgba(59,130,196,.14);
+  padding:6px 13px;border-radius:999px}
+.ratings{display:flex;gap:12px}
+.rating{flex:1;border:none;cursor:pointer;border-radius:18px;min-height:104px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;font-family:var(--round);font-weight:700;font-size:15px}
+.rating svg{width:30px;height:30px}
+.rating.correct{background:rgba(63,166,106,.16);color:var(--correct)}
+.rating.approx{background:rgba(233,162,59,.18);color:#b07a1e}
+.rating.tryagain{background:rgba(108,128,148,.16);color:var(--tryagain)}
+.stat-row{display:flex;gap:12px}
+.stat{flex:1;background:var(--bg-grouped);border-radius:18px;padding:16px 10px;text-align:center}
+.stat svg{width:22px;height:22px;margin-bottom:4px}
+.stat .v{font-family:var(--round);font-weight:800;font-size:30px;color:var(--label)}
+.stat .l{font-size:12px;color:var(--label2);margin-top:2px;line-height:1.2}
+.prog{margin-top:8px}
+.prog .pr{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-bottom:6px}
+.prog .pr .n{color:var(--label)}.prog .pr .c{color:var(--label2);font-weight:600}
+.track{height:10px;border-radius:999px;background:var(--fill);overflow:hidden;margin-bottom:16px}
+.track>i{display:block;height:100%;border-radius:999px}
+.cue{display:flex;gap:11px;align-items:center;background:rgba(59,130,196,.10);
+  border-radius:var(--r-md);padding:14px 16px;color:var(--brand-ink);font-weight:700;font-size:15px}
+.cue svg{width:20px;height:20px;flex:none}
+
+/* —— Phones —— */
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start}
+.phone-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+.phone-cap{text-align:center}
+.phone-cap .t{font-family:var(--round);font-weight:700;font-size:16px;color:var(--label)}
+.phone-cap .d{font-size:13px;color:var(--label2);margin-top:3px}
+.phone{width:300px;background:#0a0e13;border-radius:46px;padding:11px;
+  box-shadow:0 30px 60px rgba(27,58,90,.28),0 6px 14px rgba(27,58,90,.16);position:relative}
+.phone .screen{position:relative;width:100%;height:600px;border-radius:36px;overflow:hidden;
+  background:var(--bg);color:var(--label);display:flex;flex-direction:column}
+.phone .island{position:absolute;top:9px;left:50%;transform:translateX(-50%);
+  width:86px;height:24px;background:#000;border-radius:999px;z-index:30}
+.statusbar{display:flex;justify-content:space-between;align-items:center;
+  padding:13px 22px 4px;font-size:13px;font-weight:700;color:var(--label)}
+.statusbar svg{height:13px}
+.scr{flex:1;overflow:hidden;display:flex;flex-direction:column;padding:6px 16px 16px}
+.navtitle{font-family:var(--round);font-weight:800;font-size:24px;padding:6px 2px 12px}
+.s-card{background:var(--card);border-radius:20px;padding:16px;box-shadow:0 4px 14px rgba(27,58,90,.07)}
+.scheme-dark .s-card{box-shadow:0 4px 14px rgba(0,0,0,.35)}
+
+/* practice screen bits */
+.p-top{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 12px;font-size:13px;font-weight:700}
+.p-top .x{color:var(--label3)}
+.p-top .ctr{color:var(--label2);white-space:nowrap}
+.p-top .star{color:var(--accent);display:flex;gap:4px;align-items:center}
+.word-card{text-align:center;padding:22px 16px}
+.word-card .mouth{margin:0 auto 8px}
+.word-card .word{font-family:var(--round);font-weight:800;font-size:52px;color:var(--label);line-height:1}
+.word-card .shape{display:inline-block;margin-top:12px;font-size:12px;font-weight:800;color:var(--brand-ink);
+  background:rgba(59,130,196,.14);padding:4px 11px;border-radius:999px}
+.scheme-dark .word-card .shape{background:rgba(111,176,232,.2)}
+.word-card .note{font-size:13px;color:var(--label2);margin-top:10px}
+.mini-rate{display:flex;gap:9px;margin-top:14px}
+.mini-rate .mr{flex:1;border-radius:15px;min-height:78px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:6px;font-family:var(--round);font-weight:700;font-size:13px}
+.mini-rate svg{width:24px;height:24px}
+.mini-rate .c{background:rgba(63,166,106,.16);color:var(--correct)}
+.mini-rate .a{background:rgba(233,162,59,.18);color:#b07a1e}
+.scheme-dark .mini-rate .a{color:#F0BA62}
+.mini-rate .t{background:rgba(108,128,148,.16);color:var(--tryagain)}
+.next-btn{margin-top:14px;width:100%;background:var(--brand);color:#fff;border:none;border-radius:15px;
+  min-height:50px;font-family:var(--round);font-weight:700;font-size:16px;display:flex;align-items:center;
+  justify-content:center;gap:8px;box-shadow:0 6px 16px rgba(59,130,196,.3)}
+.next-btn svg{width:18px;height:18px}
+
+/* progress screen bits */
+.p-stats{display:flex;gap:9px;margin-bottom:14px}
+.p-stats .st{flex:1;background:var(--card);border-radius:16px;padding:13px 6px;text-align:center;box-shadow:0 3px 10px rgba(27,58,90,.06)}
+.scheme-dark .p-stats .st{box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.p-stats .v{font-family:var(--round);font-weight:800;font-size:24px}
+.p-stats .l{font-size:10.5px;color:var(--label2);line-height:1.15;margin-top:2px}
+.chart{display:flex;align-items:flex-end;gap:7px;height:118px;margin-top:12px}
+.chart .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
+.chart .col i{display:block;border-radius:4px 4px 0 0}
+.chart .col .ok{background:var(--correct)}
+.chart .col .ot{background:rgba(59,130,196,.35)}
+.scheme-dark .chart .col .ot{background:rgba(111,176,232,.35)}
+.chart-x{display:flex;gap:7px;margin-top:6px}
+.chart-x span{flex:1;text-align:center;font-size:9px;color:var(--label3)}
+.pw{margin-top:6px}
+.pw .row{margin-bottom:11px}
+.pw .row .top{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:5px}
+.pw .row .top .w{font-weight:700;color:var(--label)}
+.pw .row .top .c{color:var(--label2);font-size:12px}
+.pw .track{height:8px;margin-bottom:0}
+.exp-btn{margin-top:12px;width:100%;background:transparent;color:var(--brand-ink);
+  box-shadow:inset 0 0 0 2px rgba(59,130,196,.35);border:none;border-radius:14px;min-height:46px;
+  font-family:var(--round);font-weight:700;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:8px}
+.exp-btn svg{width:17px;height:17px}
+.h4lbl{font-family:var(--round);font-weight:700;font-size:15px;color:var(--label);margin:0 2px 8px}
+
+/* reward screen */
+.reward{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:14px;padding:10px 18px;position:relative;overflow:hidden}
+.reward .burst{position:absolute;inset:0;pointer-events:none}
+.reward .burst svg{position:absolute;width:26px;height:26px}
+.reward .medal{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 38%,rgba(242,160,61,.22),rgba(242,160,61,0));}
+.reward .medal svg{width:84px;height:84px;color:var(--accent)}
+.reward h3{font-family:var(--round);font-weight:800;font-size:30px;color:var(--label)}
+.reward .msg{font-size:15.5px;color:var(--label2);max-width:24ch}
+.reward .tallies{display:flex;gap:12px;width:100%;margin-top:6px}
+.reward .ty{flex:1;background:var(--card);border-radius:18px;padding:16px 8px;box-shadow:0 4px 14px rgba(27,58,90,.08)}
+.scheme-dark .reward .ty{box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.reward .ty .v{font-family:var(--round);font-weight:800;font-size:32px}
+.reward .ty .l{font-size:11.5px;color:var(--label2);margin-top:2px}
+.reward .done{width:100%;margin-top:8px;background:var(--brand);color:#fff;border:none;border-radius:15px;
+  min-height:50px;font-family:var(--round);font-weight:700;font-size:16px;box-shadow:0 6px 16px rgba(59,130,196,.3)}
+
+footer{padding:48px 0 70px;border-top:1px solid var(--hairline);color:var(--label2);font-size:14px}
+footer b{font-family:var(--round);color:var(--brand-ink)}
+
+@media(max-width:980px){
+  .hero-grid,.icon-hero,.pal-wrap,.type-grid,.tok-grid,.comp-grid{grid-template-columns:1fr}
+  .principles,.grid3,.phones{grid-template-columns:1fr}
+  .icon-hero{text-align:center;justify-items:center}
+  .icon-hero .big{margin:0 auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="brandline">
+        <span class="mk" data-mascot data-variant="classic" data-scheme="light" data-size="40"></span>
+        <b>Tadpole Talk</b>
+      </div>
+      <div class="eyebrow">Visual Theme &amp; App Icon</div>
+      <h1>Small steps,<br>big <span class="pond">growth</span>.</h1>
+      <p class="lede">A warm, calm home for families practising speech together — never clinical, never stressful, friendly for little hands and tired parents alike.</p>
+      <div class="chips">
+        <span class="chip">iOS / iPadOS 17+</span>
+        <span class="chip">SwiftUI · SF Pro Rounded</span>
+        <span class="chip">Light &amp; Dark</span>
+        <span class="chip">WCAG AA</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="stack">
+        <span data-icon data-variant="classic" data-scheme="light" data-size="248"></span>
+        <div class="float"><span class="dot"></span>Got it!</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== ESSENCE ===================== -->
+<section id="essence">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Brand essence</div>
+      <h2>A tadpole is the start of becoming</h2>
+      <p>Every choice — colour, type, the mascot, the spacing — leans toward gentle momentum. The feeling is a calm pond on a bright morning: encouraging, unhurried, and quietly proud of every little win.</p>
+    </div>
+    <div class="principles">
+      <div class="card">
+        <div class="ic" style="background:rgba(63,166,106,.14)">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3FA66A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3>Warm &amp; encouraging</h3>
+        <p>We celebrate effort, not scores. Rounded forms, soft shadows and a friendly face make practice feel like play.</p>
+      </div>
+      <div class="card">
+        <div class="ic" style="background:rgba(59,130,196,.14)">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3B82C4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h4"/></svg>
+        </div>
+        <h3>Calm, never clinical</h3>
+        <p>Plenty of breathing room, quiet colour, and one clear action per screen. Trustworthy enough for an SLP, gentle enough for daily home use.</p>
+      </div>
+      <div class="card">
+        <div class="ic" style="background:rgba(242,160,61,.16)">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D27F1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18l5-5 4 4 7-8"/><path d="M20 9V5h-4"/></svg>
+        </div>
+        <h3>Small steps, real growth</h3>
+        <p>Little-and-often beats long and hard. Progress is shown kindly — a streak, a star, a word coming along.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== APP ICON ===================== -->
+<section id="icon">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">App icon</div>
+      <h2>One friendly tadpole, clear at any size</h2>
+      <p>A single rounded character on a soft pond gradient. Bold shapes and a high-contrast eye keep it legible from the App Store down to a 60-point Spotlight result. No fine detail to disappear when scaled.</p>
+    </div>
+
+    <div class="icon-hero">
+      <div class="big"><span data-icon data-variant="classic" data-scheme="light" data-size="200"></span></div>
+      <div>
+        <h3>Meet the tadpole</h3>
+        <p>A round head with a big, bright eye, a gentle smile and a flowing tail — early growth, mid-swim. The warm accent bubble ties the mascot to the in-app reward colour.</p>
+        <div class="spec-list">
+          <div><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Vector geometry — pixel-crisp at 1024 → 60px</div>
+          <div><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>iOS continuous-corner squircle, ~22.4% radius</div>
+          <div><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Light, dark &amp; tinted variants (iOS 18)</div>
+          <div><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Colours pulled straight from the in-app theme</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin:34px 0 16px">Three mascot directions</h3>
+    <div class="grid3">
+      <div class="icon-tile">
+        <span data-icon data-variant="classic" data-scheme="light" data-size="150"></span>
+        <div class="name">Classic Swimmer</div>
+        <div class="desc">Profile head, one big eye, flowing tail. Calmest &amp; most legible small.</div>
+        <span class="tag">Primary</span>
+      </div>
+      <div class="icon-tile">
+        <span data-icon data-variant="peek" data-scheme="light" data-size="150"></span>
+        <div class="name">Little Peeker</div>
+        <div class="desc">Chubby, two eyes forward, looking right at the child. Most characterful.</div>
+      </div>
+      <div class="icon-tile">
+        <span data-icon data-variant="swim" data-scheme="light" data-size="150"></span>
+        <div class="name">Happy Wiggle</div>
+        <div class="desc">Tilted, mid-swim, eyes closed in delight. Most playful &amp; dynamic.</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin:34px 0 4px">Light · Dark · Tinted</h3>
+    <p class="muted" style="margin-bottom:8px;font-size:15px">Per current iOS conventions. The tinted variant is supplied as grayscale-on-dark — the system paints the user's chosen home-screen tint over it.</p>
+    <div class="variant-row">
+      <div class="variant lt">
+        <span data-icon data-variant="classic" data-scheme="light" data-size="140"></span>
+        <div class="vname">Light (default)</div>
+        <div class="vdesc">Aqua → brand-blue pond gradient, deep-blue tadpole.</div>
+      </div>
+      <div class="variant dk">
+        <span data-icon data-variant="classic" data-scheme="dark" data-size="140"></span>
+        <div class="vname">Dark</div>
+        <div class="vdesc">Night-pond navy, luminous tadpole with a soft halo.</div>
+      </div>
+      <div class="variant tn">
+        <span data-icon data-variant="classic" data-scheme="tinted" data-size="140"></span>
+        <div class="vname">Tinted</div>
+        <div class="vdesc">Monochrome on dark; OS applies the user's tint.</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin:34px 0 16px">Clarity at every size</h3>
+    <div class="scale-strip">
+      <div class="unit"><span data-icon data-variant="classic" data-scheme="light" data-size="120"></span><div class="px">120 px</div></div>
+      <div class="unit"><span data-icon data-variant="classic" data-scheme="light" data-size="87"></span><div class="px">87 px</div></div>
+      <div class="unit"><span data-icon data-variant="classic" data-scheme="light" data-size="60"></span><div class="px">60 px</div></div>
+      <div class="unit"><span data-icon data-variant="classic" data-scheme="light" data-size="44"></span><div class="px">44 px</div></div>
+      <div class="unit"><span data-icon data-variant="classic" data-scheme="light" data-size="29"></span><div class="px">29 px</div></div>
+    </div>
+
+    <div class="home-row">
+      <div class="home lt">
+        <span data-icon data-variant="classic" data-scheme="light" data-size="72"></span>
+        <div class="lab">Tadpole Talk</div>
+      </div>
+      <div class="home dk">
+        <span data-icon data-variant="classic" data-scheme="dark" data-size="72"></span>
+        <div class="lab">Tadpole Talk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COLOR ===================== -->
+<section id="color">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Colour</div>
+      <h2>A soft pond palette, light &amp; dark</h2>
+      <p>Calm blues and teals with a warm amber accent for moments of celebration. Every pairing below is checked live for WCAG contrast — text tiers meet AA, and semantic colours carry a UI-graphics ratio of at least 3:1.</p>
+    </div>
+    <div class="pal-wrap">
+      <div class="pal-panel light">
+        <h3>Bright Sky <span class="scheme-pill">Light</span></h3>
+        <div id="pal-light"></div>
+      </div>
+      <div class="pal-panel dark">
+        <h3 style="color:#E8EEF4">Deep Sky <span class="scheme-pill">Dark</span></h3>
+        <div id="pal-dark"></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><b style="color:#3a8a5b">AA / AAA</b> — safe for body text</span>
+      <span><b style="color:#a9701c">AA Large</b> — 19px+ bold or large UI only</span>
+      <span><b style="color:#6C8094">Decorative / Low</b> — fills &amp; graphics, not text</span>
+      <span><b>Aa</b> chips preview legibility on each surface</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TYPOGRAPHY ===================== -->
+<section id="type">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Typography</div>
+      <h2>Rounded, generous, easy to read</h2>
+      <p>Natively the app uses <b>SF&nbsp;Pro&nbsp;Rounded</b>. On the web and for these specs it maps to <b>Baloo&nbsp;2</b> for warm rounded headings and the big practice word, paired with <b>Nunito</b> — a highly legible humanist sans — for everything else. Both stay clear at large Dynamic Type sizes.</p>
+    </div>
+    <div class="type-grid">
+      <div class="card font-card">
+        <div class="big" style="font-family:var(--round);color:var(--brand-ink)">Aa</div>
+        <div class="nm">Baloo 2</div>
+        <div class="role">Display, titles, the practice word, numbers</div>
+        <div class="glyphs" style="font-family:var(--round)">ABCDEFGabcdefg 0123456789 &amp;?!</div>
+      </div>
+      <div class="card font-card">
+        <div class="big" style="font-family:var(--sans);color:var(--label)">Aa</div>
+        <div class="nm">Nunito</div>
+        <div class="role">Body, labels, buttons, captions</div>
+        <div class="glyphs" style="font-family:var(--sans)">ABCDEFGabcdefg 0123456789 &amp;?!</div>
+      </div>
+    </div>
+    <div class="card scale-rows" style="margin-top:22px">
+      <div class="scale-row"><div class="meta"><b>Display</b>52 / 800 · Baloo 2</div><div style="font-family:var(--round);font-weight:800;font-size:52px;line-height:1;color:var(--label)">puppy</div></div>
+      <div class="scale-row"><div class="meta"><b>Large title</b>34 / 800</div><div style="font-family:var(--round);font-weight:800;font-size:34px;color:var(--label)">Great practising!</div></div>
+      <div class="scale-row"><div class="meta"><b>Title</b>24 / 700</div><div style="font-family:var(--round);font-weight:700;font-size:24px;color:var(--label)">This week's words</div></div>
+      <div class="scale-row"><div class="meta"><b>Headline</b>18 / 700 · Nunito</div><div style="font-family:var(--sans);font-weight:700;font-size:18px;color:var(--label)">How each word is going</div></div>
+      <div class="scale-row"><div class="meta"><b>Body</b>17 / 400</div><div style="font-family:var(--sans);font-weight:400;font-size:17px;color:var(--label)">Say it together — slowly, at the same time, so they can copy your mouth.</div></div>
+      <div class="scale-row"><div class="meta"><b>Subhead</b>15 / 600</div><div style="font-family:var(--sans);font-weight:600;font-size:15px;color:var(--label2)">3 words in this week's set</div></div>
+      <div class="scale-row"><div class="meta"><b>Caption</b>13 / 700</div><div style="font-family:var(--sans);font-weight:700;font-size:13px;color:var(--label3)">CVCV · two simple syllables</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOKENS ===================== -->
+<section id="tokens">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Shape · Space · Elevation</div>
+      <h2>Soft, roomy, touch-first</h2>
+      <p>Big rounded corners, gentle shadows and a calm 4-point spacing rhythm. Tap targets are generous for small hands and shared parent/child use — the core rating buttons are a chunky 120pt tall.</p>
+    </div>
+    <div class="tok-grid">
+      <div class="card">
+        <h3>Corner radius</h3>
+        <div class="sub">Cards 24 · controls 16 · chips 12</div>
+        <div class="radii">
+          <div><div class="r r3"></div><span class="lab">24 · card</span></div>
+          <div><div class="r r2"></div><span class="lab">16 · control</span></div>
+          <div><div class="r r1"></div><span class="lab">12 · chip</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Spacing rhythm</h3>
+        <div class="sub">A 4-point scale, sp1 → sp6</div>
+        <div class="space-row"><code>sp1</code><span class="bar" style="width:4px"></span>4</div>
+        <div class="space-row"><code>sp2</code><span class="bar" style="width:8px"></span>8</div>
+        <div class="space-row"><code>sp3</code><span class="bar" style="width:12px"></span>12</div>
+        <div class="space-row"><code>sp4</code><span class="bar" style="width:16px"></span>16</div>
+        <div class="space-row"><code>sp5</code><span class="bar" style="width:20px"></span>20</div>
+        <div class="space-row"><code>sp6</code><span class="bar" style="width:24px"></span>24</div>
+      </div>
+      <div class="card">
+        <h3>Elevation</h3>
+        <div class="sub">Two soft, blue-tinted shadows — never harsh black</div>
+        <div class="shadow-demo">
+          <div class="sd sd1">sm · resting</div>
+          <div class="sd sd2">card · raised</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Tap targets</h3>
+        <div class="sub">44 minimum · 52 buttons · 64 large · 120 kid rating</div>
+        <div class="taps">
+          <div class="t t44">44</div>
+          <div class="t t52">52</div>
+          <div class="t t64">64</div>
+          <div class="t t120">120</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPONENTS ===================== -->
+<section id="components">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Components</div>
+      <h2>The building blocks</h2>
+      <p>Rounded, high-contrast and forgiving. The three practice ratings are the emotional heart of the app — colour-coded by meaning, sized for confident tapping, and worded without judgement.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="card comp">
+        <h3>Buttons</h3>
+        <div class="btn-row">
+          <button class="btn btn-prom"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Start practice</button>
+          <button class="btn btn-bord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Add target</button>
+          <button class="btn btn-text">Skip for now</button>
+        </div>
+      </div>
+      <div class="card comp">
+        <h3>Syllable-shape chips</h3>
+        <div class="caps">
+          <span class="cap">CV</span><span class="cap">VC</span><span class="cap">CVC</span>
+          <span class="cap">CVCV</span><span class="cap">CVCVC</span><span class="cap">Other</span>
+        </div>
+      </div>
+      <div class="card comp">
+        <h3>Practice ratings</h3>
+        <div class="ratings">
+          <button class="rating correct"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6L18.3 21 12 17.3 5.7 21l1.6-7.3L2 9.1l7-.6z"/></svg>Got it!</button>
+          <button class="rating approx"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21h2.5V11H2zM21.3 9.6c.2-.2.3-.5.3-.9 0-.8-.6-1.4-1.4-1.4h-4.3l.7-3.3v-.3c0-.4-.2-.7-.4-1L15.2 2 9.6 7.6c-.3.3-.5.7-.5 1.2V19c0 .9.7 1.6 1.6 1.6h6.9c.6 0 1.2-.4 1.5-1l2.3-5.4c0-.2.1-.4.1-.6V11.6z"/></svg>Close</button>
+          <button class="rating tryagain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 10-1.8 6"/><path d="M20 4v6h-6"/></svg>Try again</button>
+        </div>
+      </div>
+      <div class="card comp">
+        <h3>Stat tiles &amp; progress</h3>
+        <div class="stat-row">
+          <div class="stat"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><div class="v">3</div><div class="l">practices today</div></div>
+          <div class="stat"><svg viewBox="0 0 24 24" fill="var(--correct)"><path d="M12 2l3 6.5 7 .6-5.3 4.6L18.3 21 12 17.3 5.7 21l1.6-7.3L2 9.1l7-.6z"/></svg><div class="v">14</div><div class="l">great reps</div></div>
+          <div class="stat"><svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2C9 7 6 9 6 14a6 6 0 0012 0c0-3-2-5-3-8-1 2-2 3-3 4z"/></svg><div class="v">5</div><div class="l">day streak</div></div>
+        </div>
+        <div class="prog">
+          <div class="pr"><span class="n">puppy</span><span class="c">8/10</span></div>
+          <div class="track"><i style="width:80%;background:var(--correct)"></i></div>
+          <div class="pr"><span class="n">water</span><span class="c">5/12</span></div>
+          <div class="track"><i style="width:42%;background:var(--brand)"></i></div>
+        </div>
+        <div class="cue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4v-4h4v-4h4V8h4"/></svg>How much help?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SCREENS ===================== -->
+<section id="screens">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">In context</div>
+      <h2>The theme, applied</h2>
+      <p>The palette, type and components working together across the three moments that matter: a guided practice card, the progress view a parent shares with their SLP, and the celebration that keeps a young child coming back.</p>
+    </div>
+    <div class="phones">
+
+      <!-- PRACTICE -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="island"></div>
+          <div class="screen">
+            <div class="statusbar"><span>9:41</span><span>
+              <svg viewBox="0 0 18 12" fill="var(--label)"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="5" y="4" width="3" height="8" rx="1"/><rect x="10" y="1" width="3" height="11" rx="1" opacity=".4"/></svg>
+              <svg viewBox="0 0 24 12" fill="none" style="margin-left:4px"><rect x="1" y="2" width="19" height="8" rx="2.5" stroke="var(--label)" opacity=".5"/><rect x="2.5" y="3.5" width="13" height="5" rx="1" fill="var(--label)"/><rect x="21" y="4.5" width="2" height="3" rx="1" fill="var(--label)" opacity=".5"/></svg>
+            </span></div>
+            <div class="scr">
+              <div class="p-top">
+                <span class="x"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6" stroke-linecap="round"/></svg></span>
+                <span class="ctr">Word 3 of 6</span>
+                <span class="star"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6L18.3 21 12 17.3 5.7 21l1.6-7.3L2 9.1l7-.6z"/></svg>4</span>
+              </div>
+              <div class="s-card word-card">
+                <svg class="mouth" width="118" height="92" viewBox="0 0 118 92" fill="none">
+                  <circle cx="62" cy="46" r="36" stroke="var(--hairline)" stroke-width="2"/>
+                  <ellipse cx="30" cy="40" rx="10" ry="13" stroke="var(--brand)" stroke-width="3.2"/>
+                  <path d="M28 56 Q40 54 52 58" stroke="var(--label3)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <div class="word">puppy</div>
+                <div class="shape">CVCV</div>
+                <div class="note">Two simple syllables — bounce on each “p”.</div>
+                <div class="mini-rate">
+                  <div class="mr c"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .6-5.3 4.6L18.3 21 12 17.3 5.7 21l1.6-7.3L2 9.1l7-.6z"/></svg>Got it!</div>
+                  <div class="mr a"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21h2.5V11H2zM21.3 9.6c.2-.2.3-.5.3-.9 0-.8-.6-1.4-1.4-1.4h-4.3l.7-3.3v-.3c0-.5-.2-.8-.4-1L15.2 2 9.6 7.6c-.3.3-.5.7-.5 1.2V19c0 .9.7 1.6 1.6 1.6h6.9c.6 0 1.2-.4 1.5-1l2.3-5.4c0-.2.1-.4.1-.6V11.6z"/></svg>Close</div>
+                  <div class="mr t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 10-1.8 6"/><path d="M20 4v6h-6"/></svg>Try again</div>
+                </div>
+              </div>
+              <div class="cue" style="margin-top:14px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4v-4h4v-4h4V8h4"/></svg>How much help?
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="margin-left:auto"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <button class="next-btn">Next word <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap"><div class="t">Practice — exercise card</div><div class="d">One word, a mouth cue, three kind ratings</div></div>
+      </div>
+
+      <!-- PROGRESS (dark) -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="island"></div>
+          <div class="screen scheme-dark">
+            <div class="statusbar"><span>9:41</span><span>
+              <svg viewBox="0 0 18 12" fill="var(--label)"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="5" y="4" width="3" height="8" rx="1"/><rect x="10" y="1" width="3" height="11" rx="1" opacity=".4"/></svg>
+              <svg viewBox="0 0 24 12" fill="none" style="margin-left:4px"><rect x="1" y="2" width="19" height="8" rx="2.5" stroke="var(--label)" opacity=".5"/><rect x="2.5" y="3.5" width="13" height="5" rx="1" fill="var(--label)"/><rect x="21" y="4.5" width="2" height="3" rx="1" fill="var(--label)" opacity=".5"/></svg>
+            </span></div>
+            <div class="scr">
+              <div class="navtitle">Progress</div>
+              <div class="p-stats">
+                <div class="st"><div class="v" style="color:var(--brand)">28</div><div class="l">sessions</div></div>
+                <div class="st"><div class="v" style="color:var(--correct)">96</div><div class="l">great reps</div></div>
+                <div class="st"><div class="v" style="color:var(--accent)">4</div><div class="l">coming along</div></div>
+              </div>
+              <div class="s-card">
+                <div class="h4lbl">Last two weeks</div>
+                <div class="chart">
+                  <div class="col"><i class="ok" style="height:18px"></i><i class="ot" style="height:10px"></i></div>
+                  <div class="col"><i class="ok" style="height:30px"></i><i class="ot" style="height:14px"></i></div>
+                  <div class="col"><i class="ok" style="height:12px"></i><i class="ot" style="height:8px"></i></div>
+                  <div class="col"><i class="ok" style="height:44px"></i><i class="ot" style="height:18px"></i></div>
+                  <div class="col"><i class="ok" style="height:36px"></i><i class="ot" style="height:12px"></i></div>
+                  <div class="col"><i class="ok" style="height:22px"></i><i class="ot" style="height:10px"></i></div>
+                  <div class="col"><i class="ok" style="height:52px"></i><i class="ot" style="height:16px"></i></div>
+                  <div class="col"><i class="ok" style="height:40px"></i><i class="ot" style="height:14px"></i></div>
+                </div>
+                <div class="chart-x"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span><span>M</span></div>
+              </div>
+              <div class="s-card" style="margin-top:12px">
+                <div class="h4lbl">How each word is going</div>
+                <div class="pw">
+                  <div class="row"><div class="top"><span class="w">puppy</span><span class="c">8/10</span></div><div class="track"><i style="width:80%;background:var(--correct)"></i></div></div>
+                  <div class="row"><div class="top"><span class="w">baby</span><span class="c">9/11</span></div><div class="track"><i style="width:82%;background:var(--correct)"></i></div></div>
+                  <div class="row"><div class="top"><span class="w">water</span><span class="c">5/12</span></div><div class="track"><i style="width:42%;background:var(--brand)"></i></div></div>
+                </div>
+                <button class="exp-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 20h16"/></svg>Export for your therapist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap"><div class="t">Progress — dark mode</div><div class="d">Honest figures, a fortnight at a glance, one-tap export</div></div>
+      </div>
+
+      <!-- REWARD -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="island"></div>
+          <div class="screen">
+            <div class="statusbar"><span>9:41</span><span>
+              <svg viewBox="0 0 18 12" fill="var(--label)"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="5" y="4" width="3" height="8" rx="1"/><rect x="10" y="1" width="3" height="11" rx="1" opacity=".4"/></svg>
+              <svg viewBox="0 0 24 12" fill="none" style="margin-left:4px"><rect x="1" y="2" width="19" height="8" rx="2.5" stroke="var(--label)" opacity=".5"/><rect x="2.5" y="3.5" width="13" height="5" rx="1" fill="var(--label)"/><rect x="21" y="4.5" width="2" height="3" rx="1" fill="var(--label)" opacity=".5"/></svg>
+            </span></div>
+            <div class="scr">
+              <div class="reward">
+                <div class="burst">
+                  <svg style="top:18%;left:14%" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3 6.5 7 .6-5.3 4.6L18.3 21 12 17.3 5.7 21l1.6-7.3L2 9.1l7-.6z"/></svg>
+                  <svg style="top:12%;right:16%" viewBox="0 0 24 24" fill="var(--correct)"><path d="M12 3v18M3 12h18" stroke="var(--correct)" stroke-width="3" stroke-linecap="round"/></svg>
+                  <svg style="top:30%;right:9%" viewBox="0 0 24 24" fill="var(--pink)"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z"/></svg>
+                  <svg style="top:36%;left:8%" viewBox="0 0 24 24" fill="var(--purple)"><circle cx="12" cy="12" r="4"/></svg>
+                  <svg style="top:54%;left:18%" viewBox="0 0 24 24" fill="var(--brand)"><path d="M12 2l3 6.5 7 .6-5.3 4.6L18.3 21 12 17.3 5.7 21l1.6-7.3L2 9.1l7-.6z"/></svg>
+                  <svg style="top:50%;right:14%" viewBox="0 0 24 24" fill="var(--accent)"><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+                <div class="medal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 20.4 6.2 19.5l1.1-6.5L2.6 8.4l6.5-.9z"/></svg></div>
+                <h3>Great practising!</h3>
+                <p class="msg">You and Mia got <b style="color:var(--accent-ink)">9 great reps</b> today — that's how speech grows.</p>
+                <div class="tallies">
+                  <div class="ty"><div class="v" style="color:var(--correct)">9</div><div class="l">great reps</div></div>
+                  <div class="ty"><div class="v" style="color:var(--brand)">14</div><div class="l">tries</div></div>
+                </div>
+                <button class="done">Done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap"><div class="t">Reward — celebration</div><div class="d">A joyful burst of SF-symbol confetti, never emoji</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Tadpole Talk</b> — visual theme &amp; app icon. Colours, spacing and shape tokens mirror the app's <code>Theme.swift</code> (“Bright Sky” / “Deep Sky”). Mascot &amp; icon drawn as scalable vector. Type maps SF&nbsp;Pro&nbsp;Rounded → Baloo&nbsp;2 + Nunito for web.
+  </div>
+</footer>
+
+<script src="icons.js"></script>
+<script src="palette.js"></script>
+</body>
+</html>

@@ -13,16 +13,29 @@ struct Phoneme: Codable, Identifiable, Hashable {
     let manner: String      // how the sound is made
     let voicing: Voicing
     let howTo: String       // a parent-friendly "show your child" instruction
+    /// The same guidance broken into short, numbered actions. Optional so older content
+    /// (and signs) that only have a one-line `howTo` still decode.
+    let steps: [String]?
+    /// An optional demo clip (full YouTube URL). Absent for most sounds — the app stays
+    /// offline-first, and a "Watch" button only appears when this is set.
+    let videoURL: String?
+    /// An original, plain-language hand cue — a simple gesture a parent can make alongside
+    /// the sound. Written for this app; not licensed Cued Articulation™ artwork. Optional so
+    /// older content still decodes; a "Hand cue" card shows only when set.
+    let handCue: String?
     let exampleWords: [String]
     /// Drives the generated mouth diagram (lips / tongue-tip / back / open).
     let articulator: Articulator
+
+    /// Numbered steps to show, falling back to the single `howTo` line when none are given.
+    var howToSteps: [String] { steps?.isEmpty == false ? steps! : [howTo] }
 
     enum Kind: String, Codable { case consonant, vowel }
     enum Voicing: String, Codable {
         case voiced, voiceless
         var label: String { self == .voiced ? "Voice on (throat buzzes)" : "Voice off (quiet)" }
     }
-    enum Articulator: String, Codable { case lips, tongueTip, tongueBack, open, rounded }
+    enum Articulator: String, Codable { case lips, tongueTip, tongueBack, open, rounded, teethOnLip }
 }
 
 /// A Key Word Sign entry. Signs are a *bridge to* speech, not a replacement. Shipped with
@@ -33,8 +46,15 @@ struct SignEntry: Codable, Identifiable, Hashable {
     let word: String        // "More"
     let category: String    // "Mealtime", "Core words", ...
     let handshape: String   // how to make the sign, plain language
+    /// The handshape broken into short, numbered actions. Optional — falls back to `handshape`.
+    let steps: [String]?
+    /// An optional demo clip (full YouTube URL); a "Watch" button shows only when set.
+    let videoURL: String?
     let when: String        // when you'd use it
     let symbol: String      // SF Symbol used as a friendly icon
+
+    /// Numbered steps to show, falling back to the single `handshape` line when none are given.
+    var howToSteps: [String] { steps?.isEmpty == false ? steps! : [handshape] }
 }
 
 /// A pre-built practice target the parent can add with one tap, organised by syllable

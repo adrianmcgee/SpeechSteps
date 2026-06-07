@@ -2,97 +2,266 @@
   {
     "id": "more", "word": "More", "category": "Mealtime & requests",
     "handshape": "Bring your fingertips together in front of you a couple of times, as if pinching a little 'more'.",
+    "steps": [
+      "Bunch the fingertips of each hand together into two little points.",
+      "Tap the two points together in front of you.",
+      "Repeat the tap a couple of times."
+    ],
+    "videoURL": "https://www.youtube.com/watch?v=CMhLXPlc1mU",
     "when": "When your child wants more food, play, or another turn.",
     "symbol": "plus.circle.fill"
   },
   {
     "id": "eat", "word": "Eat", "category": "Mealtime & requests",
     "handshape": "Bring a flat hand to your mouth as if putting food in.",
+    "steps": [
+      "Hold one hand flat with fingers together.",
+      "Bring your fingertips up to your mouth, as if putting food in.",
+      "Tap lightly a couple of times."
+    ],
     "when": "At mealtimes, or when offering a snack.",
     "symbol": "fork.knife"
   },
   {
     "id": "drink", "word": "Drink", "category": "Mealtime & requests",
     "handshape": "Make a 'C' shape with your hand and tip it towards your mouth like a cup.",
+    "steps": [
+      "Curve your hand into a 'C' shape, like holding a cup.",
+      "Bring it up to your mouth.",
+      "Tip it gently towards you as if taking a sip."
+    ],
     "when": "When offering a drink or your child is thirsty.",
     "symbol": "cup.and.saucer.fill"
   },
   {
     "id": "finished", "word": "Finished", "category": "Mealtime & requests",
     "handshape": "Hold both flat hands up, then turn them over and out, like 'all done'.",
+    "steps": [
+      "Hold both flat hands up, palms facing you.",
+      "Turn them over so the palms face out.",
+      "Flick them out to the sides, like 'all done'."
+    ],
     "when": "When an activity, meal, or play is over.",
     "symbol": "checkmark.circle.fill"
   },
   {
     "id": "help", "word": "Help", "category": "Core words",
     "handshape": "Rest one fist on your open flat palm and lift both together.",
+    "steps": [
+      "Make a fist with one hand.",
+      "Rest the fist on your other open, flat palm.",
+      "Lift both hands up together."
+    ],
     "when": "When your child needs a hand — a powerful early word.",
     "symbol": "hand.raised.fill"
   },
   {
     "id": "more-please", "word": "Please", "category": "Core words",
     "handshape": "Rub your flat hand in a small circle on your chest.",
+    "steps": [
+      "Place your flat hand on the middle of your chest.",
+      "Rub it in a small circle.",
+      "Keep it gentle and smooth."
+    ],
     "when": "To model polite requests alongside speech.",
     "symbol": "hands.sparkles.fill"
   },
   {
     "id": "again", "word": "Again", "category": "Core words",
     "handshape": "Curve one hand and tap its fingertips into your other open palm.",
+    "steps": [
+      "Curve one hand into a shallow scoop.",
+      "Hold your other hand open and flat.",
+      "Tap the curved fingertips into the open palm."
+    ],
     "when": "For another turn — great during play and songs.",
     "symbol": "arrow.clockwise.circle.fill"
   },
   {
     "id": "stop", "word": "Stop", "category": "Core words",
     "handshape": "Bring the side of one flat hand down onto your other open palm.",
+    "steps": [
+      "Hold one hand open and flat, palm up.",
+      "Hold your other hand flat, like a blade.",
+      "Bring the blade hand down sharply onto the open palm."
+    ],
     "when": "To pause an activity, or for safety.",
     "symbol": "stop.circle.fill"
   },
   {
     "id": "yes", "word": "Yes", "category": "Core words",
     "handshape": "Make a fist and nod it up and down, like a nodding head.",
+    "steps": [
+      "Make a fist with one hand.",
+      "Bend it up and down at the wrist.",
+      "Think of a little head nodding 'yes'."
+    ],
     "when": "Answering and choosing — pair with a nod.",
     "symbol": "checkmark.seal.fill"
   },
   {
     "id": "no", "word": "No", "category": "Core words",
     "handshape": "Tap your thumb and first two fingers together, like a closing beak.",
+    "steps": [
+      "Hold out your thumb and first two fingers.",
+      "Tap them together, like a beak closing.",
+      "Do it a couple of times."
+    ],
     "when": "Answering and refusing — pair with a head shake.",
     "symbol": "xmark.seal.fill"
   },
   {
     "id": "mum", "word": "Mum", "category": "People",
     "handshape": "Tap your thumb on the side of your chin a couple of times.",
+    "steps": [
+      "Spread your hand with the thumb sticking out.",
+      "Tap your thumb on the side of your chin.",
+      "Tap a couple of times."
+    ],
     "when": "Naming a parent — motivating and very early.",
     "symbol": "person.fill"
   },
   {
     "id": "dad", "word": "Dad", "category": "People",
     "handshape": "Tap your thumb on your forehead a couple of times.",
+    "steps": [
+      "Spread your hand with the thumb sticking out.",
+      "Tap your thumb on your forehead.",
+      "Tap a couple of times."
+    ],
     "when": "Naming a parent — motivating and very early.",
     "symbol": "person.fill"
   },
   {
     "id": "dog", "word": "Dog", "category": "Favourites",
     "handshape": "Pat the side of your leg, as if calling a dog.",
+    "steps": [
+      "Hold your hand flat by your side.",
+      "Pat the side of your leg a couple of times.",
+      "Think of calling a dog over."
+    ],
     "when": "Animals are motivating early words.",
     "symbol": "pawprint.fill"
   },
   {
     "id": "ball", "word": "Ball", "category": "Favourites",
     "handshape": "Curve both hands as if holding a round ball.",
+    "steps": [
+      "Curve both hands as if cupping a round ball.",
+      "Bring your fingertips toward each other.",
+      "Hold the round shape for a moment."
+    ],
     "when": "A favourite toy and an easy first word.",
     "symbol": "circle.fill"
   },
   {
     "id": "bed", "word": "Bed / sleep", "category": "Routines",
     "handshape": "Rest your cheek on your flat hand, like sleeping.",
+    "steps": [
+      "Hold one hand flat.",
+      "Tilt your head to the side.",
+      "Rest your cheek on your hand, like sleeping."
+    ],
     "when": "Bedtime and nap routines.",
     "symbol": "bed.double.fill"
   },
   {
     "id": "bath", "word": "Bath", "category": "Routines",
     "handshape": "Rub both fists up and down on your chest, like washing.",
+    "steps": [
+      "Make a fist with each hand.",
+      "Place them on your chest.",
+      "Rub them up and down, like washing."
+    ],
     "when": "Bath-time routine.",
     "symbol": "bathtub.fill"
+  },
+  {
+    "id": "want", "word": "Want", "category": "Core words",
+    "handshape": "Hold both open hands out in front, palms up, and draw them gently towards you.",
+    "steps": [
+      "Hold both hands out in front, palms facing up.",
+      "Curl your fingers slightly.",
+      "Draw your hands in towards your body, like 'gimme'."
+    ],
+    "when": "When your child is asking for an object or activity.",
+    "symbol": "hand.point.up.left.fill"
+  },
+  {
+    "id": "look", "word": "Look", "category": "Core words",
+    "handshape": "Point two fingers from your eyes out towards the thing you're looking at.",
+    "steps": [
+      "Hold up your first two fingers in a 'V'.",
+      "Start with them pointing back near your eyes.",
+      "Turn them out towards what you want to look at."
+    ],
+    "when": "To share attention — point out something interesting together.",
+    "symbol": "eye.fill"
+  },
+  {
+    "id": "wait", "word": "Wait", "category": "Core words",
+    "handshape": "Hold one flat hand up, palm out, and hold it still for a moment.",
+    "steps": [
+      "Hold one hand up flat, palm facing out.",
+      "Keep it still and steady.",
+      "Pair it with a calm 'wait' so your child learns to pause."
+    ],
+    "when": "To help your child pause and take turns.",
+    "symbol": "hourglass"
+  },
+  {
+    "id": "hello", "word": "Hello", "category": "People",
+    "handshape": "Raise an open hand and give a friendly wave.",
+    "steps": [
+      "Raise one open hand up beside your head.",
+      "Wave it gently from side to side.",
+      "Smile and say 'hello' as you wave."
+    ],
+    "when": "Greeting people — a warm, very early social word.",
+    "symbol": "hand.wave.fill"
+  },
+  {
+    "id": "thank-you", "word": "Thank you", "category": "Core words",
+    "handshape": "Touch your fingertips to your chin, then bring your hand forward and down.",
+    "steps": [
+      "Touch the fingertips of a flat hand to your chin.",
+      "Bring your hand forward and down, away from your face.",
+      "Pair it with a warm 'thank you'."
+    ],
+    "when": "Modelling polite, grateful words alongside speech.",
+    "symbol": "heart.fill"
+  },
+  {
+    "id": "book", "word": "Book", "category": "Favourites",
+    "handshape": "Hold both flat hands together, then open them like opening a book.",
+    "steps": [
+      "Press both flat hands together, palms touching.",
+      "Keep the little-finger sides together.",
+      "Open your hands like opening a book."
+    ],
+    "when": "Story time and shared reading.",
+    "symbol": "book.fill"
+  },
+  {
+    "id": "car", "word": "Car", "category": "Favourites",
+    "handshape": "Hold both hands as if on a steering wheel and turn it side to side.",
+    "steps": [
+      "Hold both loose fists out in front, like gripping a wheel.",
+      "Turn them as if steering.",
+      "Add a 'brrm' sound for fun."
+    ],
+    "when": "Going out, or playing with toy cars.",
+    "symbol": "car.fill"
+  },
+  {
+    "id": "toilet", "word": "Toilet", "category": "Routines",
+    "handshape": "Make a fist with your thumb poking out between two fingers and give it a little shake.",
+    "steps": [
+      "Make a fist with one hand.",
+      "Poke your thumb out between your first two fingers.",
+      "Give it a small shake from side to side."
+    ],
+    "when": "Toileting routines — a useful everyday word.",
+    "symbol": "toilet.fill"
   }
 ]

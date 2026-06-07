@@ -122,8 +122,13 @@ struct ProgressDashboardView: View {
     }
 
     private func emptyHint(_ text: String) -> some View {
-        Text(text).font(.subheadline).foregroundStyle(Theme.label2)
-            .frame(maxWidth: .infinity, alignment: .leading)
+        HStack(spacing: Theme.sp3) {
+            TadpoleMascot()
+                .frame(width: 56, height: 56)
+            Text(text).font(.subheadline).foregroundStyle(Theme.label2)
+            Spacer(minLength: 0)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

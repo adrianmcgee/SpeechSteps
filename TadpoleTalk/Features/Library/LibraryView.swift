@@ -45,7 +45,7 @@ struct PhonemeLibraryView: View {
                         PhonemeDetailView(phoneme: p)
                     } label: {
                         VStack(spacing: Theme.sp2) {
-                            MouthDiagram(articulator: p.articulator)
+                            MouthDiagram(phoneme: p, style: .compact)
                                 .frame(height: 84)
                             Text(p.label).font(.subheadline.weight(.medium))
                                 .foregroundStyle(Theme.label)

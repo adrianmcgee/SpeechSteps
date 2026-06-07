@@ -4,6 +4,13 @@
     "place": "Both lips together", "manner": "A little pop of air",
     "voicing": "voiceless",
     "howTo": "Press your lips together, then pop them open with a quiet puff. No voice — just air.",
+    "steps": [
+      "Press both lips firmly together.",
+      "Build up a little air behind your lips.",
+      "Pop them open with a quiet puff — no voice, just air."
+    ],
+    "videoURL": "https://www.youtube.com/watch?v=E6XEANMnhrA",
+    "handCue": "Hold a finger to your closed lips, then flick it away as they pop open.",
     "exampleWords": ["pig", "up", "pop", "happy"], "articulator": "lips"
   },
   {
@@ -11,6 +18,13 @@
     "place": "Both lips together", "manner": "A pop of air with your voice on",
     "voicing": "voiced",
     "howTo": "Press your lips together and turn your voice on as they pop open. Feel your throat buzz.",
+    "steps": [
+      "Press both lips together.",
+      "Turn your voice on so your throat buzzes.",
+      "Pop your lips open to let the sound out."
+    ],
+    "videoURL": "https://www.youtube.com/watch?v=E6XEANMnhrA",
+    "handCue": "Bounce a loose fist near your lips as they pop, to show the voice is on.",
     "exampleWords": ["ball", "baby", "bib", "bubble"], "articulator": "lips"
   },
   {
@@ -18,6 +32,13 @@
     "place": "Both lips together", "manner": "Humming through your nose",
     "voicing": "voiced",
     "howTo": "Keep your lips gently closed and hum. The sound comes out your nose — feel your lips tickle.",
+    "steps": [
+      "Close your lips gently — don't squeeze.",
+      "Turn your voice on and hum.",
+      "Feel the sound buzz out your nose and tickle your lips."
+    ],
+    "videoURL": "https://www.youtube.com/watch?v=E6XEANMnhrA",
+    "handCue": "Stroke a flat hand smoothly down past your closed lips for the long hum.",
     "exampleWords": ["mum", "more", "me", "yummy"], "articulator": "lips"
   },
   {
@@ -25,6 +46,12 @@
     "place": "Rounded lips", "manner": "A smooth glide with your voice on",
     "voicing": "voiced",
     "howTo": "Round your lips like a small kiss, voice on, then glide into the next sound.",
+    "steps": [
+      "Round your lips into a small 'kiss' shape.",
+      "Turn your voice on.",
+      "Glide smoothly straight into the next sound."
+    ],
+    "handCue": "Make a small 'O' with finger and thumb, then sweep your hand forward in a wave.",
     "exampleWords": ["water", "we", "wow", "away"], "articulator": "rounded"
   },
   {
@@ -32,6 +59,12 @@
     "place": "Open mouth", "manner": "A gentle breath of air",
     "voicing": "voiceless",
     "howTo": "Open your mouth and let a soft breath out, like fogging up a window.",
+    "steps": [
+      "Open your mouth in a relaxed, neutral shape.",
+      "Let a soft breath of air flow out — no voice.",
+      "Think of fogging up a window or a cold mirror."
+    ],
+    "handCue": "Open a flat hand in front of your mouth and push it out gently with the breath.",
     "exampleWords": ["hat", "hi", "hop", "behind"], "articulator": "open"
   },
   {
@@ -39,6 +72,12 @@
     "place": "Tongue tip behind top teeth", "manner": "A little tap of air",
     "voicing": "voiceless",
     "howTo": "Tap your tongue tip on the bumpy spot behind your top teeth, then release a quiet tap. No voice.",
+    "steps": [
+      "Lift your tongue tip to the bumpy spot behind your top teeth.",
+      "Build up a little air behind it.",
+      "Release with a quick, quiet tap — no voice."
+    ],
+    "handCue": "Tap a fingertip once against the back of your top teeth, then flick it away.",
     "exampleWords": ["top", "two", "cat", "tea"], "articulator": "tongueTip"
   },
   {
@@ -46,6 +85,12 @@
     "place": "Tongue tip behind top teeth", "manner": "A tap with your voice on",
     "voicing": "voiced",
     "howTo": "Tap your tongue tip behind your top teeth with your voice on. Feel the buzz.",
+    "steps": [
+      "Lift your tongue tip behind your top teeth.",
+      "Turn your voice on so your throat buzzes.",
+      "Release with a quick tap to let the sound out."
+    ],
+    "handCue": "Tap a fingertip near your top teeth, with a little bounce to show the voice is on.",
     "exampleWords": ["dog", "daddy", "duck", "red"], "articulator": "tongueTip"
   },
   {
@@ -53,6 +98,12 @@
     "place": "Tongue tip behind top teeth", "manner": "Humming through your nose",
     "voicing": "voiced",
     "howTo": "Rest your tongue tip behind your top teeth and hum out your nose.",
+    "steps": [
+      "Rest your tongue tip behind your top teeth.",
+      "Turn your voice on and hum.",
+      "Feel the sound come out your nose."
+    ],
+    "handCue": "Rest a fingertip on the side of your nose to show the hum coming through it.",
     "exampleWords": ["no", "night", "moon", "banana"], "articulator": "tongueTip"
   },
   {
@@ -60,6 +111,12 @@
     "place": "Back of the tongue", "manner": "A pop of air at the back",
     "voicing": "voiceless",
     "howTo": "Lift the back of your tongue to the roof at the back, then pop it open. No voice.",
+    "steps": [
+      "Lift the back of your tongue up to the roof, near the back.",
+      "Build up a little air behind it.",
+      "Pop it open with a quiet release — no voice."
+    ],
+    "handCue": "Point a finger back towards your throat, then flick it forward for the back pop.",
     "exampleWords": ["car", "cat", "key", "back"], "articulator": "tongueBack"
   },
   {
@@ -67,6 +124,12 @@
     "place": "Back of the tongue", "manner": "A back pop with your voice on",
     "voicing": "voiced",
     "howTo": "Lift the back of your tongue and pop it open with your voice on. Feel the buzz.",
+    "steps": [
+      "Lift the back of your tongue up to the roof at the back.",
+      "Turn your voice on so your throat buzzes.",
+      "Pop it open to let the sound out."
+    ],
+    "handCue": "Point a finger towards your throat and bounce it forward to show the voice is on.",
     "exampleWords": ["go", "girl", "dog", "again"], "articulator": "tongueBack"
   },
   {
@@ -74,13 +137,91 @@
     "place": "Top teeth on bottom lip", "manner": "A long stream of air",
     "voicing": "voiceless",
     "howTo": "Rest your top teeth on your bottom lip and blow a long, quiet stream of air.",
-    "exampleWords": ["fish", "fun", "off", "phone"], "articulator": "lips"
+    "steps": [
+      "Rest your top teeth gently on your bottom lip.",
+      "Blow a long, steady stream of air through the gap.",
+      "Keep it quiet — no voice, just air."
+    ],
+    "videoURL": "https://www.youtube.com/watch?v=UYdPZ341gwk",
+    "handCue": "Lay a fingertip across your bottom lip, then draw it forward for the long airflow.",
+    "exampleWords": ["fish", "fun", "off", "phone"], "articulator": "teethOnLip"
+  },
+  {
+    "id": "s", "ipa": "s", "label": "s as in sun", "kind": "consonant",
+    "place": "Tongue tip behind top teeth", "manner": "A long, quiet stream of air",
+    "voicing": "voiceless",
+    "howTo": "Lift your tongue tip near the bumpy spot behind your top teeth and hiss a long, quiet stream of air, like a snake.",
+    "steps": [
+      "Lift your tongue tip close to the bumpy spot behind your top teeth.",
+      "Keep your teeth almost together and smile a little.",
+      "Hiss a long, steady stream of air — no voice, like a snake."
+    ],
+    "handCue": "Trace a long, wavy line forward with one finger, like a slithering snake.",
+    "exampleWords": ["sun", "see", "bus", "yes"], "articulator": "tongueTip"
+  },
+  {
+    "id": "z", "ipa": "z", "label": "z as in zoo", "kind": "consonant",
+    "place": "Tongue tip behind top teeth", "manner": "A long stream of air with your voice on",
+    "voicing": "voiced",
+    "howTo": "Make the same shape as 's', but turn your voice on so it buzzes like a bee.",
+    "steps": [
+      "Lift your tongue tip close to the bumpy spot behind your top teeth.",
+      "Keep your teeth almost together.",
+      "Turn your voice on and let it buzz — like a busy bee."
+    ],
+    "handCue": "Trace a wavy line forward while wiggling your finger, like a buzzing bee.",
+    "exampleWords": ["zoo", "zip", "buzz", "is"], "articulator": "tongueTip"
+  },
+  {
+    "id": "l", "ipa": "l", "label": "l as in lion", "kind": "consonant",
+    "place": "Tongue tip behind top teeth", "manner": "Voice on, air flows round the tongue",
+    "voicing": "voiced",
+    "howTo": "Press your tongue tip up behind your top teeth, voice on, and let the sound flow around the sides — a long 'lll'.",
+    "steps": [
+      "Press your tongue tip up onto the bumpy spot behind your top teeth.",
+      "Turn your voice on and keep it going.",
+      "Let the sound flow around the sides of your tongue — 'lll'."
+    ],
+    "handCue": "Point your finger up and hold it steady, like your tongue tip lifting up.",
+    "exampleWords": ["lion", "look", "ball", "yellow"], "articulator": "tongueTip"
+  },
+  {
+    "id": "y", "ipa": "j", "label": "y as in yes", "kind": "consonant",
+    "place": "Smile, tongue high", "manner": "A smooth glide with your voice on",
+    "voicing": "voiced",
+    "howTo": "Start in a wide 'ee' smile with your voice on, then glide straight into the next sound.",
+    "steps": [
+      "Smile wide and lift your tongue high, like starting an 'ee'.",
+      "Turn your voice on.",
+      "Glide smoothly straight into the next sound — 'yuh'."
+    ],
+    "handCue": "Hold a smiling 'ee' hand near your mouth, then sweep it forward into the next sound.",
+    "exampleWords": ["yes", "you", "yum", "yoyo"], "articulator": "open"
+  },
+  {
+    "id": "ng", "ipa": "ŋ", "label": "ng as in sing", "kind": "consonant",
+    "place": "Back of the tongue", "manner": "Humming through your nose",
+    "voicing": "voiced",
+    "howTo": "Lift the back of your tongue to the roof at the back, voice on, and hum out your nose.",
+    "steps": [
+      "Lift the back of your tongue up to the roof at the back.",
+      "Turn your voice on and hum.",
+      "Feel the sound come out your nose — 'ng'."
+    ],
+    "handCue": "Point a finger towards your throat, then up to your nose to show the hum.",
+    "exampleWords": ["sing", "ring", "song", "bang"], "articulator": "tongueBack"
   },
   {
     "id": "ah", "ipa": "ɑ", "label": "ah as in cot", "kind": "vowel",
     "place": "Mouth wide open", "manner": "Voice on, mouth open",
     "voicing": "voiced",
     "howTo": "Open your mouth wide like the doctor's 'aah' and turn your voice on.",
+    "steps": [
+      "Drop your jaw and open your mouth wide.",
+      "Turn your voice on and say 'aah'.",
+      "Think of the sound at the doctor's."
+    ],
+    "handCue": "Open your hand wide below your chin, like your jaw dropping open.",
     "exampleWords": ["car", "cat", "dog", "mama"], "articulator": "open"
   },
   {
@@ -88,6 +229,12 @@
     "place": "Smile, tongue high", "manner": "Voice on, lips smiling",
     "voicing": "voiced",
     "howTo": "Smile wide and say 'eee' with your voice on, like a happy smile sound.",
+    "steps": [
+      "Stretch your lips into a wide smile.",
+      "Lift your tongue high toward the front.",
+      "Turn your voice on and say 'eee'."
+    ],
+    "handCue": "Stretch a finger across your smile from one corner to the other.",
     "exampleWords": ["see", "me", "bee", "key"], "articulator": "open"
   },
   {
@@ -95,6 +242,12 @@
     "place": "Rounded lips", "manner": "Voice on, lips round",
     "voicing": "voiced",
     "howTo": "Round your lips into a small circle and say 'ooo' with your voice on.",
+    "steps": [
+      "Round your lips into a small circle and push them forward.",
+      "Turn your voice on.",
+      "Say a long 'ooo'."
+    ],
+    "handCue": "Make a small round 'O' with your fingers and push it forward from your lips.",
     "exampleWords": ["moon", "you", "boo", "shoe"], "articulator": "rounded"
   },
   {
@@ -102,6 +255,64 @@
     "place": "Rounded lips", "manner": "Voice on, lips round",
     "voicing": "voiced",
     "howTo": "Round your lips and say 'ohh' with your voice on, like a surprised 'oh!'.",
+    "steps": [
+      "Round your lips into an 'O' shape.",
+      "Turn your voice on and say 'ohh'.",
+      "Think of a surprised 'oh!'."
+    ],
+    "handCue": "Make a round 'O' shape with your whole hand in front of your mouth.",
     "exampleWords": ["go", "no", "boat", "home"], "articulator": "rounded"
+  },
+  {
+    "id": "ih", "ipa": "ɪ", "label": "ih as in sit", "kind": "vowel",
+    "place": "Slightly open, relaxed", "manner": "Voice on, short and relaxed",
+    "voicing": "voiced",
+    "howTo": "Open your mouth a little, keep it relaxed, and say a short 'ih' with your voice on.",
+    "steps": [
+      "Open your mouth just a little, lips relaxed.",
+      "Turn your voice on.",
+      "Say a short, quick 'ih'."
+    ],
+    "handCue": "Pinch finger and thumb a small gap apart to show the short, relaxed sound.",
+    "exampleWords": ["sit", "in", "pig", "kid"], "articulator": "open"
+  },
+  {
+    "id": "eh", "ipa": "ɛ", "label": "eh as in bed", "kind": "vowel",
+    "place": "Mouth half open", "manner": "Voice on, mouth half open",
+    "voicing": "voiced",
+    "howTo": "Open your mouth halfway and say 'eh' with your voice on, like the start of 'egg'.",
+    "steps": [
+      "Open your mouth about halfway.",
+      "Turn your voice on.",
+      "Say a short 'eh', like the start of 'egg'."
+    ],
+    "handCue": "Open a flat hand halfway below your chin, not as wide as 'ah'.",
+    "exampleWords": ["bed", "egg", "ten", "red"], "articulator": "open"
+  },
+  {
+    "id": "ae", "ipa": "æ", "label": "ae as in cat", "kind": "vowel",
+    "place": "Mouth open, lips wide", "manner": "Voice on, mouth open and wide",
+    "voicing": "voiced",
+    "howTo": "Open your mouth and stretch your lips wide, then say 'aaa' with your voice on, like a happy cat.",
+    "steps": [
+      "Open your mouth and stretch your lips out wide.",
+      "Turn your voice on.",
+      "Say a stretched 'aaa', like in 'cat'."
+    ],
+    "handCue": "Open your hand wide and stretch it sideways below your chin.",
+    "exampleWords": ["cat", "hat", "apple", "bag"], "articulator": "open"
+  },
+  {
+    "id": "uh", "ipa": "ʌ", "label": "uh as in cup", "kind": "vowel",
+    "place": "Mouth relaxed, slightly open", "manner": "Voice on, short and relaxed",
+    "voicing": "voiced",
+    "howTo": "Let your mouth fall relaxed and slightly open, and say a short 'uh' with your voice on.",
+    "steps": [
+      "Let your jaw and lips fall relaxed, mouth slightly open.",
+      "Turn your voice on.",
+      "Say a short, easy 'uh'."
+    ],
+    "handCue": "Let a relaxed open hand drop a little below your chin for the easy 'uh'.",
+    "exampleWords": ["cup", "up", "mud", "sun"], "articulator": "open"
   }
 ]
