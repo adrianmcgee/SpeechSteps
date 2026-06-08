@@ -9,6 +9,9 @@ struct RootView: View {
 
     @AppStorage("hasAcceptedDisclaimer") private var hasAcceptedDisclaimer = false
 
+    // Skip the splash under UI tests (`-localStore`) so screenshot/flow tests aren't delayed.
+    @State private var showSplash = !ProcessInfo.processInfo.arguments.contains("-localStore")
+
     var body: some View {
         Group {
             if !hasAcceptedDisclaimer {
@@ -25,6 +28,16 @@ struct RootView: View {
             }
         }
         .animation(.spring(duration: 0.3), value: saveStatus.lastFailure)
+        .overlay {
+            if showSplash {
+                SplashView()
+                    .transition(.opacity)
+                    .task {
+                        try? await Task.sleep(for: .seconds(1.5))
+                        withAnimation(.easeInOut(duration: 0.4)) { showSplash = false }
+                    }
+            }
+        }
     }
 }
 
