@@ -4,7 +4,7 @@ Draft metadata for the App Store Connect record. Edit freely before submission.
 
 ## Name & subtitle
 - **Name:** Tadpole Talk
-- **Subtitle:** Gentle home speech practice for kids
+- **Subtitle:** Gentle home speech practice
 
 ## Category
 - Primary: **Education** (or **Medical** — Education avoids extra medical-claim scrutiny).
@@ -39,7 +39,7 @@ Tadpole Talk supports therapy directed by a qualified speech pathologist. It doe
 diagnose, assess, or replace professional care.
 
 ## Keywords (≤100 chars, comma-separated)
-apraxia,CAS,speech therapy,toddler speech,SLP,articulation,key word sign,speech delay,praxis,kids speech
+apraxia,CAS,speech therapy,toddler speech,SLP,articulation,key word sign,speech delay,praxis
 
 ## URLs
 - Support URL: `https://adrianmcgee.github.io/TadpoleTalk/support.html`
